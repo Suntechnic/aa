@@ -1,0 +1,159 @@
+{% set title = 'Главная страница' %}
+{% extends 'src/twig/layout.twig' %}
+{% import './src/components/product/product.twig' as product %}
+{% block content %}
+	<main class="page page--header">
+		{{product.product("section")}}
+		<section class="working section animate-block">
+			<div class='working__container'>
+				<div class="working__inner working__inner--two">
+					<h2 class="working__title text-50 fade-up" data-watch data-watch-once>Другие работы</h2>
+					<div class="working__slider swiper js-slider-working fade-up" data-watch data-watch-once>
+						<div class="working__swiper swiper-wrapper">
+							<div class="working__card card-working swiper-slide">
+								<div class="card-working__slider swiper js-slider-card">
+									<div class="card-working__swiper swiper-wrapper">
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/01.webp" srcset="./img/working/01@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/02.webp" srcset="./img/working/02@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/03.webp" srcset="./img/working/03@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+									</div>
+									<div class="card-working__pagination"></div>
+								</div>
+								<div class="card-working__content">
+									<a href="javascript:void(0)" class="card-working__category text-14">Кольца и браслеты</a>
+									<a href="javascript:void(0)" class="card-working__title text-18">Мимоза</a>
+								</div>
+							</div>
+							<div class="working__card card-working swiper-slide">
+								<div class="card-working__slider swiper js-slider-card">
+									<div class="card-working__swiper swiper-wrapper">
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/02.webp" srcset="./img/working/02@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/03.webp" srcset="./img/working/03@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+									</div>
+									<div class="card-working__pagination"></div>
+								</div>
+								<div class="card-working__content">
+									<a href="javascript:void(0)" class="card-working__category text-14">Броши и подвески</a>
+									<a href="javascript:void(0)" class="card-working__title text-18">Нефритовая рыба</a>
+								</div>
+							</div>
+							<div class="working__card card-working swiper-slide">
+								<div class="card-working__slider swiper js-slider-card">
+									<div class="card-working__swiper swiper-wrapper">
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/03.webp" srcset="./img/working/03@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/02.webp" srcset="./img/working/02@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+									</div>
+									<div class="card-working__pagination"></div>
+								</div>
+								<div class="card-working__content">
+									<a href="javascript:void(0)" class="card-working__category text-14">Кольца и браслеты</a>
+									<a href="javascript:void(0)" class="card-working__title text-18">Волны и птицы</a>
+								</div>
+							</div>
+							<div class="working__card card-working swiper-slide">
+								<div class="card-working__slider swiper js-slider-card">
+									<div class="card-working__swiper swiper-wrapper">
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/01.webp" srcset="./img/working/01@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+										<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+											<div class="card-working__img">
+												<picture>
+													<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</a>
+									</div>
+									<div class="card-working__pagination"></div>
+								</div>
+								<div class="card-working__content">
+									<a href="javascript:void(0)" class="card-working__category text-14">Темляки и бусины</a>
+									<a href="javascript:void(0)" class="card-working__title text-18">Стрекоза</a>
+								</div>
+							</div>
+						</div>
+						<div class="working__navigation">
+							<button type="button" class="working__arrow working__arrow--prev swiper-arrow" style='--icon:url("../img/icons/prev.svg")'></button>
+							<div class="working__pagination"></div>
+							<button type="button" class="working__arrow working__arrow--next swiper-arrow" style='--icon:url("../img/icons/next.svg")'></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}

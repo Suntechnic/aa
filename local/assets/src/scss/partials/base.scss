@@ -1,0 +1,92 @@
+/* stylelint-disable*/
+/* IMPORTS
+---------------------------- */
+
+@use 'sass:meta';
+@use '../../components/popup/popup' as *;
+
+// Кастомный курсор
+
+// @use"../../components/fls-cursor/fls-cursor" as *;
+
+// Форма
+
+// @use"../../components/form/form" as *;
+
+// @use"../../components/input/input" as *;
+// @use"../../components/radio/radio" as *;
+// @use"../../components/select/select" as *;
+// @use"../../components/checkbox/checkbox" as *;
+
+// Диапазон цен и т.д.
+
+// @use"../../components/range/range" as *;
+
+@use '../../components/pagination/pagination' as *;
+
+// Кнопки плюс, минус для товара
+
+// @use"../../components/quantity/quantity" as *;
+
+// Анимация пульсация
+
+// @use"../../components/ripple/ripple" as *;
+
+// Показать больше
+
+// @use"../../components/showMore/showMore" as *;
+
+// Спойлер\Аккордеон
+
+// @use"../../components/spollers/spollers" as *;
+
+@use '../../components/tabs/tabs' as *;
+
+// Подсказки
+
+// @use'../../components/tippy/tippy.scss';
+
+// Swiper
+
+@import 'swiper/swiper.css' layer(base);
+
+// До/после
+
+// @use"../../components/before-after/before-after" as *;
+
+/* stylelint-enable*/
+
+/* UTILS
+---------------------------- */
+
+// Шаблоны (заготовки)
+// @extend %имя шаблона;
+// Snippet (SCSS): ex
+
+// Счетчик для списка
+/* stylelint-disable-next-line scss/percent-placeholder-pattern */
+%listCounter {
+  list-style-type: none;
+  counter-reset: item;
+
+  li {
+    position: relative;
+
+    /* stylelint-disable-next-line scss/percent-placeholder-pattern */
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: counter(item);
+      counter-increment: item;
+    }
+  }
+}
+
+// Скрыть scroll
+%hideScroll {
+  /* stylelint-disable-next-line scss/percent-placeholder-pattern */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

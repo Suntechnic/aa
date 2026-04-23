@@ -1,0 +1,543 @@
+{% macro blog(classes) %}
+	<section class="blog {{classes}} animate-block">
+		<div class='blog__container'>
+			<div class="blog__inner">
+
+				<h2 class="blog__title text-50 fade-up" data-watch data-watch-once>Блог</h2>
+				<div data-tabs class="blog__tabs tabs">
+					<nav data-tabs-titles class="tabs__navigation fade-up" data-watch data-watch-once>
+						<button type="button" class="tabs__title text-16 _tab-active">Все статьи</button>
+						<button type="button" class="tabs__title text-16">Выставки</button>
+						<button type="button" class="tabs__title text-16">Новости</button>
+						<button type="button" class="tabs__title text-16">Технологии</button>
+					</nav>
+					<div data-tabs-body class="tabs__content fade-up" data-watch data-watch-once>
+						<div class="tabs__body">
+							<div class="tabs__cards">
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/01.webp" srcset="./img/exhibition/01@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/02.webp" srcset="./img/exhibition/02@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">"MAD RUSSIAN EVENING"</div>
+									<address class="card-exhibition__address text-16">
+										Отель Континенталь, Тверская ул. 22
+										<br>
+										место  A 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/04.webp" srcset="./img/exhibition/04@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">12 марта 2025 г</time>
+									<div class="card-exhibition__title text-22">Литьё по восковой модели</div>
+									<div class="card-exhibition__address text-16">
+										Литьё по восковой модели — древний метод, который остаётся незаменимым в современном производстве. Рассказываем
+										<br>
+										о технологии, её преимуществах и областях применения.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/05.webp" srcset="./img/exhibition/05@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">Литьё под давлением</div>
+									<div class="card-exhibition__address text-16">
+										Как литьё под давлением позволяет выпускать тысячи идентичных деталей с минимальной обработкой — рассказываем о принципах, преимуществах и сферах применения метода.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#новости
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/06.webp" srcset="./img/exhibition/06@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">12 марта 2025 г</time>
+									<div class="card-exhibition__title text-22">Литьё в песчаные формы</div>
+									<div class="card-exhibition__address text-16">
+										От миниатюрных деталей до многотонных корпусов — литьё в песчаные формы позволяет работать практически с любыми металлами 
+																																																																																																																																												и размерами отливок.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/02.webp" srcset="./img/exhibition/02@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">"MAD RUSSIAN EVENING"</div>
+									<address class="card-exhibition__address text-16">
+										Отель Континенталь, Тверская ул. 22
+										<br>
+										место  A 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="tabs__body">
+							<div class="tabs__cards">
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/01.webp" srcset="./img/exhibition/01@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/02.webp" srcset="./img/exhibition/02@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">"MAD RUSSIAN EVENING"</div>
+									<address class="card-exhibition__address text-16">
+										Отель Континенталь, Тверская ул. 22
+										<br>
+										место  A 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/01.webp" srcset="./img/exhibition/01@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/02.webp" srcset="./img/exhibition/02@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">"MAD RUSSIAN EVENING"</div>
+									<address class="card-exhibition__address text-16">
+										Отель Континенталь, Тверская ул. 22
+										<br>
+										место  A 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/04.webp" srcset="./img/exhibition/04@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">12 марта 2025 г</time>
+									<div class="card-exhibition__title text-22">Литьё по восковой модели</div>
+									<div class="card-exhibition__address text-16">
+										Литьё по восковой модели — древний метод, который остаётся незаменимым в современном производстве. Рассказываем
+										<br>
+										о технологии, её преимуществах и областях применения.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/05.webp" srcset="./img/exhibition/05@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">Литьё под давлением</div>
+									<div class="card-exhibition__address text-16">
+										Как литьё под давлением позволяет выпускать тысячи идентичных деталей с минимальной обработкой — рассказываем о принципах, преимуществах и сферах применения метода.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#новости
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/06.webp" srcset="./img/exhibition/06@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">12 марта 2025 г</time>
+									<div class="card-exhibition__title text-22">Литьё в песчаные формы</div>
+									<div class="card-exhibition__address text-16">
+										От миниатюрных деталей до многотонных корпусов — литьё в песчаные формы позволяет работать практически с любыми металлами 
+																																																																																																																																												и размерами отливок.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/02.webp" srcset="./img/exhibition/02@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">"MAD RUSSIAN EVENING"</div>
+									<address class="card-exhibition__address text-16">
+										Отель Континенталь, Тверская ул. 22
+										<br>
+										место  A 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="tabs__body">
+							<div class="tabs__cards">
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/05.webp" srcset="./img/exhibition/05@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">Литьё под давлением</div>
+									<div class="card-exhibition__address text-16">
+										Как литьё под давлением позволяет выпускать тысячи идентичных деталей с минимальной обработкой — рассказываем о принципах, преимуществах и сферах применения метода.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#новости
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/06.webp" srcset="./img/exhibition/06@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">12 марта 2025 г</time>
+									<div class="card-exhibition__title text-22">Литьё в песчаные формы</div>
+									<div class="card-exhibition__address text-16">
+										От миниатюрных деталей до многотонных корпусов — литьё в песчаные формы позволяет работать практически с любыми металлами 
+																																																																																																																																												и размерами отливок.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/02.webp" srcset="./img/exhibition/02@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">"MAD RUSSIAN EVENING"</div>
+									<address class="card-exhibition__address text-16">
+										Отель Континенталь, Тверская ул. 22
+										<br>
+										место  A 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="tabs__body">
+							<div class="tabs__cards">
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/05.webp" srcset="./img/exhibition/05@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+									<div class="card-exhibition__title text-22">Литьё под давлением</div>
+									<div class="card-exhibition__address text-16">
+										Как литьё под давлением позволяет выпускать тысячи идентичных деталей с минимальной обработкой — рассказываем о принципах, преимуществах и сферах применения метода.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#новости
+									</div>
+								</a>
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/06.webp" srcset="./img/exhibition/06@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">12 марта 2025 г</time>
+									<div class="card-exhibition__title text-22">Литьё в песчаные формы</div>
+									<div class="card-exhibition__address text-16">
+										От миниатюрных деталей до многотонных корпусов — литьё в песчаные формы позволяет работать практически с любыми металлами 
+																																																																																																																																												и размерами отливок.
+									</div>
+									<div class="card-exhibition__tag text-16">
+										#технологии
+									</div>
+								</a>
+
+								<a href="javascript:void(0)" class="tabs__card card-exhibition">
+									<div class="card-exhibition__img">
+										<picture>
+											<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+										</picture>
+									</div>
+									<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января 2026 г</time>
+									<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+									<address class="card-exhibition__address text-16">
+										Амбер Плаза, Краснопролетарская ул. 36
+										<br>
+										место  Ж 1
+									</address>
+									<div class="card-exhibition__tag text-16">
+										#выставки
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="blog__bottom fade-up" data-watch data-watch-once>
+					<a href="javascript:void(0)" class="blog__btn btn btn--icon text-16" style='--icon:url("../img/icons/01.svg")'>Показать ещё</a>
+					<div class="blog__pagination pagination">
+						<ul class="pagination__list">
+							<li>
+								<a href="javascript:void(0)" class="pagination__item text-16 active">1</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" class="pagination__item text-16">2</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" class="pagination__item text-16">3</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" class="pagination__item text-16">4</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" class="pagination__item pagination__item--glasses text-16">...</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" class="pagination__item text-16">8</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endmacro %}

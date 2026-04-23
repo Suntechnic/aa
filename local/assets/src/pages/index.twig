@@ -1,0 +1,52 @@
+{% set title = 'Страницы сайта' %}
+{% extends 'src/twig/layout.twig' %}
+
+{% block content %}
+	<main class="page">
+		<section class="index-page" style="margin-top: 300px">
+			<div class="index-page__container">
+				<h1 class="index-page__title block-title">Страницы:</h1>
+				<ol style="list-style-position: inside">
+					<li style="margin-bottom: 10px">
+						<a href="./home.html">Главная</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./homeTwo.html">Главная без картинок с низу</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./catalog.html">Каталог</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./blog.html">Блог</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./work.html">Мои работы</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./card.html">Карточка</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./block.html">Блок карточка</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./contact.html">Контакты</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./mistake.html">404</a>
+					</li>
+					<li style="margin-bottom: 10px">
+						<a href="./about.html">
+							Обо мне
+						</a>
+					</li>
+				</ol>
+				{# <h2 class="index-page__title block-title">Модальные окна</h2>
+								<ol style="list-style-position: inside">
+									<li style="margin-bottom: 10px">
+										<a href="popup-callback.html" data-popup="#callback-popup">Оставить заявку</a>
+									</li>
+								</ol> #}
+			</div>
+		</section>
+	</main>
+{% endblock %}

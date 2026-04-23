@@ -1,0 +1,77 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .catalog {
+    // .catalog__container
+
+    &__container {
+    }
+
+    // .catalog__inner
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      @include mq($tablet) {
+        gap: 5.83vw;
+      }
+    }
+
+    // .catalog__title
+
+    &__title {
+      text-align: center;
+      font-weight: 300;
+    }
+
+    // .catalog__row
+
+    &__row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 10px;
+
+      @include mq($tablet) {
+        gap: 2.97vw 1.04vw;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include mq($s) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    // .catalog__column
+
+    &__column {
+    }
+
+    // .catalog__bottom
+
+    &__bottom {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 3px auto 0px;
+
+      @include mq($tablet) {
+        gap: 1.56vw;
+        margin: 0.26vw auto 0px;
+      }
+    }
+
+    // .catalog__btn
+
+    &__btn {
+      max-width: max-content;
+      margin: 0 auto;
+    }
+
+    // .catalog__pagination
+
+    &__pagination {
+    }
+  }
+}

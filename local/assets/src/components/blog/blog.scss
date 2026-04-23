@@ -1,0 +1,87 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .blog {
+    // .blog__container
+
+    &__container {
+    }
+
+    // .blog__inner
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      @include mq($tablet) {
+        gap: 52px;
+      }
+    }
+
+    // .blog__title
+
+    &__title {
+      text-align: center;
+      font-weight: 300;
+    }
+
+    // .blog__tabs
+
+    &__tabs {
+      .tabs__navigation {
+        margin: 0 auto;
+
+        @include mq($tablet) {
+          max-width: max-content;
+        }
+
+        @include mq-max($tablet) {
+          overflow: auto;
+          flex-wrap: nowrap !important;
+          // width: 100%;
+          // padding: 0px var(--pad);
+          // margin-right: calc(var(--pad) * -1);
+          // margin-left: calc(var(--pad) * -1);
+          // justify-content: center;
+          width: 100%;
+          max-width: max-content;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+
+        .tabs__title {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    // .blog__bottom
+
+    &__bottom {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 3px auto 0px;
+
+      @include mq($tablet) {
+        gap: 1.56vw;
+        margin: 3.39vw auto 0px;
+      }
+    }
+
+    // .blog__btn
+
+    &__btn {
+      max-width: max-content;
+      margin: 0 auto;
+    }
+
+    // .blog__pagination
+
+    &__pagination {
+    }
+  }
+}

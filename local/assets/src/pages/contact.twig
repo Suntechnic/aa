@@ -1,0 +1,8 @@
+{% set title = 'Главная страница' %}
+{% extends 'src/twig/layout.twig' %}
+{% import './src/components/contact/contact.twig' as contact %}
+{% block content %}
+	<main class="page page--header">
+		{{contact.contact("section")}}
+	</main>
+{% endblock %}

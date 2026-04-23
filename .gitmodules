@@ -1,0 +1,18 @@
+[submodule ".dev/tools"]
+	path = .dev/tools
+	url = https://github.com/Suntechnic/xTools.git
+[submodule ".github/instructions"]
+	path = .github/instructions
+	url = https://github.com/Suntechnic/vs-instructions.git
+[submodule ".github/prompts"]
+	path = .github/prompts
+	url = https://github.com/Suntechnic/prompts.git
+[submodule "local/php_interface/lib/Bxx"]
+	path = local/php_interface/lib/Bxx
+	url = https://github.com/Suntechnic/xBxx.git
+[submodule "local/components/x"]
+	path = local/components/x
+	url = https://github.com/Suntechnic/xComponents.git
+[submodule "local/gadgets/x"]
+	path = local/gadgets/x
+	url = https://github.com/Suntechnic/xGadgets.git

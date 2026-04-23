@@ -1,0 +1,128 @@
+@use '../../scss/partials/imports' as *;
+
+.footer {
+  // .footer__container
+
+  &__container {
+  }
+
+  // .footer__inner
+
+  &__inner {
+    padding: 30px 0px;
+    border-top: 1px solid cl(blck);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 27px;
+
+    @include mq($tablet) {
+      padding: 2.08vw 0px;
+      border-top: 0.05vw solid cl(blck);
+    }
+
+    @include mq-max($tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  // .footer__info
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include mq($tablet) {
+      gap: 1.04vw;
+    }
+  }
+
+  // .footer__logo
+
+  &__logo {
+    width: 49.371px;
+    flex: 0 0 49.371px;
+    height: 48px;
+
+    @include mq($tablet) {
+      width: 3.64vw;
+      flex: 0 0 3.64vw;
+      height: 3.54vw;
+    }
+    img,
+    picture {
+      width: 100%;
+      height: 100%;
+
+      max-width: 100%;
+      max-height: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  // .footer__items
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include mq($tablet) {
+      gap: 0.52vw;
+    }
+
+    a {
+      transition: all $time $tr 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: cl(alt);
+        }
+      }
+    }
+  }
+
+  // .footer__item
+
+  &__item {
+  }
+
+  // .footer__content
+
+  &__content {
+    @include mq-max($tablet) {
+      width: 100%;
+    }
+  }
+
+  // .footer__row
+
+  &__row {
+    display: flex;
+    gap: 10px;
+
+    @include mq($tablet) {
+      gap: 0.52vw;
+      flex-direction: column;
+    }
+
+    @include mq-max($tablet) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  // .footer__column
+
+  &__column {
+    transition: all $time $tr 0s;
+    text-align: right;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: cl(alt);
+      }
+    }
+  }
+}

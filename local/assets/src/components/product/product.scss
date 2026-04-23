@@ -1,0 +1,289 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .product {
+    // .product__container
+
+    &__container {
+    }
+
+    // .product__body
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      @include mq($tablet) {
+        gap: 5.83vw;
+      }
+    }
+
+    // .product__inner
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      @include mq($tablet) {
+        grid-template-columns: 1fr 25.73vw;
+        gap: 1.04vw;
+      }
+    }
+
+    // .product__top
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 14px;
+
+      @include mq($tablet) {
+        gap: 1.04vw;
+      }
+    }
+
+    // .product__breadcrumb
+
+    &__breadcrumb {
+      .breadcrumb__list {
+        justify-content: center;
+      }
+    }
+    // .product__title
+
+    &__title {
+      font-weight: 300;
+    }
+
+    // .product__sliders
+
+    &__sliders {
+      display: flex;
+      gap: 10px;
+      min-width: 0;
+
+      @include mq($tablet) {
+        gap: 1.04vw;
+      }
+
+      @include mq-max($tablet) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    // .product__thumbs
+
+    &__thumbs {
+      --size: max-content;
+      width: var(--size);
+
+      @include mq($tablet) {
+        --size: 6.98vw;
+        height: 40.1vw;
+        flex: 0 0 var(--size);
+      }
+    }
+
+    // .product__swiper
+
+    &__swiper {
+    }
+
+    // .product__gallery
+
+    &__gallery {
+      --size: 50px;
+      width: var(--size);
+      height: var(--size);
+      flex: 0 0 var(--size);
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+
+      @include mq($tablet) {
+        border-radius: 1.04vw;
+        margin-bottom: 1.04vw;
+        --size: 6.98vw;
+      }
+
+      @include mq($s) {
+        --size: 80px;
+      }
+
+      @include mq-max($tablet) {
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border: 1px solid cl(primary);
+        transition: all $time $tr 0s;
+        opacity: 0;
+        @include mq($tablet) {
+          border-radius: 1.04vw;
+          border: 0.1vw solid cl(primary);
+        }
+      }
+
+      &.swiper-slide-thumb-active {
+        &::before {
+          content: '';
+          opacity: 1;
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          &::before {
+            content: '';
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    // .product__gallery-img
+
+    &__gallery-img {
+      img,
+      picture {
+        width: 100%;
+        height: 100%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: cover;
+      }
+    }
+
+    // .product__slider
+
+    &__slider {
+      border-radius: 10px;
+      overflow: hidden;
+      min-width: 0;
+      max-width: 100%;
+
+      @include mq($tablet) {
+        border-radius: 1.04vw;
+      }
+    }
+
+    // .product__slide
+
+    &__slide {
+      height: 230px;
+
+      @include mq($tablet) {
+        height: 40.1vw;
+      }
+
+      @include mq($s) {
+        height: 420px;
+      }
+    }
+
+    // .product__slide-img
+
+    &__slide-img {
+      width: 100%;
+      height: 100%;
+      img,
+      picture {
+        width: 100%;
+        height: 100%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: cover;
+      }
+    }
+
+    // .product__content
+
+    &__content {
+    }
+
+    // .product__info
+
+    &__info {
+      padding: 15px 19px;
+      border-radius: 10px;
+      border: 1px solid cl(bg-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+
+      @include mq($tablet) {
+        border: 0.05vw solid cl(bg-secondary);
+        gap: 1.15vw;
+        padding: 1.77vw 0.99vw;
+        border-radius: 1.04vw;
+      }
+    }
+
+    // .product__text
+
+    &__text {
+      color: cl(gry);
+
+      font-family: var(--font-secondary);
+      font-size: 14px;
+      line-height: 142.857%; /* 142.857% */
+
+      @include mq($tablet) {
+        line-height: 156.25%; /* 156.25% */
+      }
+    }
+
+    // .product__items
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include mq($tablet) {
+        gap: 1.35vw;
+      }
+    }
+
+    // .product__item
+
+    &__item {
+      color: cl(gry);
+      display: flex;
+      gap: 4px;
+      font-family: var(--font-secondary);
+
+      @include mq($tablet) {
+        gap: 0.21vw;
+      }
+    }
+
+    // .product__category
+
+    &__category {
+      font-size: 14px;
+    }
+
+    // .product__value
+
+    &__value {
+      font-size: 14px;
+    }
+  }
+}

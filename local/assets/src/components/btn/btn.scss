@@ -1,0 +1,76 @@
+@use '../../scss/partials/imports' as *;
+
+/* stylelint-disable*/
+@layer component {
+  .btn {
+    display: flex;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+
+    gap: 10px;
+
+    font-family: var(--font-secondary);
+    padding: 13px 17px;
+    border-radius: 10px;
+    border: 1px solid cl(bg-secondary);
+
+    transition: all $time $tr 0s;
+
+    @include mq($tablet) {
+      border-radius: 1.04vw;
+      border: 0.05vw solid cl(bg-secondary);
+      padding: 1.09vw 2.08vw;
+      gap: 0.52vw;
+    }
+
+    @include mq($s) {
+      padding: 20px 25px;
+    }
+
+    @include mq-max($s) {
+      font-size: 12px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: cl(alt);
+        border-color: cl(alt);
+      }
+    }
+  }
+}
+
+@layer mod {
+  .btn--icon {
+    &::after {
+      content: '';
+      mask: var(--icon) center center/contain no-repeat;
+      -webkit-mask: var(--icon) center center/contain no-repeat;
+      background: cl(alt);
+
+      --size: 12px;
+      width: var(--size);
+      height: var(--size);
+      flex: 0 0 var(--size);
+
+      transition: all $time $tr 0s;
+
+      @include mq($tablet) {
+        --size: 0.63vw;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          content: '';
+          background: cl(primary);
+        }
+      }
+    }
+  }
+}
+
+/* stylelint-enable*/

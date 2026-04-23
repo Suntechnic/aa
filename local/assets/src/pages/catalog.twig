@@ -1,0 +1,8 @@
+{% set title = 'Главная страница' %}
+{% extends 'src/twig/layout.twig' %}
+{% import './src/components/catalog/catalog.twig' as catalog %}
+{% block content %}
+	<main class="page page--header">
+		{{catalog.catalog("section")}}
+	</main>
+{% endblock %}

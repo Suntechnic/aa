@@ -1,0 +1,19 @@
+{
+    "name": "x/dev",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "lib/App",
+            "Bxx\\": "lib/Bxx"
+        }
+    },
+    "require-dev": {
+        "kint-php/kint": "dev-master",
+        "phpunit/phpunit": "11.3",
+        "phpstan/phpstan": "^2.1"
+    },
+    "require": {
+        "mav/slovo": "^0.2.3",
+        "webonyx/graphql-php": "^15.20"
+    }
+}

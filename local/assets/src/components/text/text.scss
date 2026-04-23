@@ -1,0 +1,85 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .text-16 {
+    font-size: 18px;
+    @include mq($tablet) {
+      font-size: 0.83vw;
+    }
+
+    @include mq($s) {
+      font-size: 20px;
+    }
+  }
+
+  .text-22 {
+    font-size: 14px;
+    @include mq($tablet) {
+      font-size: 1.15vw;
+      line-height: 136.364%; /* 136.364% */
+    }
+
+    @include mq($s) {
+      font-size: 18px;
+    }
+  }
+
+  .text-18 {
+    font-size: 14px;
+    font-weight: 300;
+
+    @include mq($tablet) {
+      font-size: 0.94vw;
+    }
+
+    @include mq($s) {
+      font-size: 18px;
+    }
+  }
+
+  .text-14 {
+    font-size: 12px;
+    font-weight: 300;
+
+    @include mq($tablet) {
+      font-size: 0.73vw;
+    }
+
+    @include mq($s) {
+      font-size: 14px;
+    }
+  }
+
+  .text-70 {
+    font-size: 40px;
+    @include mq($tablet) {
+      font-size: 3.65vw;
+    }
+
+    @include mq($s) {
+      font-size: 45px;
+    }
+  }
+
+  .text-40 {
+    font-size: 20px;
+    @include mq($tablet) {
+      font-size: 2.08vw;
+    }
+
+    @include mq($s) {
+      font-size: 24px;
+    }
+  }
+
+  .text-50 {
+    font-size: 30px;
+    @include mq($tablet) {
+      font-size: 2.6vw;
+    }
+
+    @include mq($s) {
+      font-size: 38px;
+    }
+  }
+}

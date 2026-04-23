@@ -1,0 +1,117 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .exhibition {
+    // .exhibition__container
+
+    &__container {
+    }
+
+    // .exhibition__inner
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      @include mq($tablet) {
+        gap: 2.6vw;
+      }
+    }
+
+    // .exhibition__title
+
+    &__title {
+      text-align: center;
+      font-weight: 300;
+
+      @include mq($s) {
+        br {
+          display: none;
+        }
+      }
+    }
+
+    // .exhibition__slider
+
+    &__slider {
+      width: 100%;
+
+      @include mq-max($tablet) {
+        overflow: visible;
+      }
+    }
+
+    // .exhibition__swiper
+
+    &__swiper {
+      @include mq($tablet) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3.13vw 1.04vw;
+      }
+    }
+
+    // .exhibition__card
+
+    &__card {
+    }
+
+    // .exhibition__pagination
+
+    &__pagination {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px auto 0px;
+      gap: 10px;
+
+      @include mq($tablet) {
+        gap: 0.52vw;
+      }
+
+      .swiper-pagination-bullet {
+        --size: 8px;
+        width: var(--size);
+        height: var(--size);
+        flex: 0 0 var(--size);
+        border-radius: 50%;
+        background: cl(bg-secondary);
+        transition: all $time $tr 0s;
+
+        cursor: pointer;
+        @include mq($tablet) {
+          --size: 0.42vw;
+        }
+
+        &.swiper-pagination-bullet-active {
+          background: cl(primary) !important;
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            background: #353535;
+          }
+        }
+      }
+
+      &.swiper-pagination-lock {
+        display: none;
+      }
+    }
+
+    // .exhibition__showmore
+
+    &__showmore {
+      margin: 10px auto 0px;
+
+      color: cl(alt);
+      font-size: 14px;
+
+      @include mq($tablet) {
+        margin: 0.52vw auto 0px;
+      }
+    }
+  }
+}

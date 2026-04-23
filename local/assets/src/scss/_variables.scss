@@ -1,0 +1,91 @@
+@use 'sass:math';
+@use 'sass:list';
+@use '_functions' as *;
+@use './partials/breakpoints' as *;
+@layer base, component, mod;
+
+/* COLORS
+------------------------ */
+
+// [ ] Указать цвета. Пример использования: color: cl(primary, 0.5) - где 0.5 - опциональный, и отвечает за прозрачность
+$colors: (
+  // base
+  'primary': #ffffff,
+  'alt': #cfbd90,
+  'blck': #23221d,
+  'gry': #b3b3b3,
+
+  // bg
+  'bg': #0f0f0f,
+  'bg-secondary': #222222,
+  'bg-third': #000000,
+
+  // actions
+  'success': #259243,
+  'error': #f00
+);
+
+$z-indexes: [100, 200, 1200, 1300];
+
+// Минимальная ширина страницы
+$min-width: 360;
+
+// Ширина полотна (макета)
+$max-width: 1920;
+
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$max-width-container: 0;
+
+/* EFFECTS
+------------------------ */
+
+$time: 0.3s;
+$tr: ease-in;
+
+:root {
+  /* SECTION SPACING  */
+
+  --spacing: 100px;
+
+  // [ ] Изменить название шрифта raleway, на свой
+  /* FONTS  */
+
+  --font-primary:
+    'AVFontimer', sans-serif, -apple-system, blinkmacsystemfont, roboto, ubuntu,
+    'Droid Sans', 'Helvetica Neue', arial, sans-serif, 'Apple Color Emoji';
+  --font-secondary:
+    'Manrope', sans-serif, -apple-system, blinkmacsystemfont, roboto, ubuntu,
+    'Droid Sans', 'Helvetica Neue', arial, sans-serif, 'Apple Color Emoji';
+}
+
+@media (max-width: $tablet) {
+  :root {
+    --spacing: 80px;
+  }
+}
+
+@media (max-width: $mobile) {
+  :root {
+    --spacing: 60px;
+  }
+}
+
+:root {
+  /* COLORS
+  ------------------------- */
+  @if $colors {
+    @each $key, $value in $colors {
+      --color-#{$key}: #{$value};
+      --color-#{$key}--rgb: #{hextorgb($value)};
+    }
+  }
+
+  --font-size-default: 14px;
+
+  /** Z-INDEX SYSTEM
+  ------------------------- */
+  @each $value in $z-indexes {
+    $i: list.index($z-indexes, $value);
+    --index-#{$i}: #{$value};
+  }
+}

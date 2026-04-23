@@ -1,0 +1,171 @@
+@use '../../scss/partials/imports' as *;
+
+/* stylelint-disable selector-class-pattern */
+// <SELECT>
+// Сниппет (HTML): sel
+@layer component {
+  .select {
+    position: relative;
+    min-width: 0;
+
+    // .select__body
+    &__body {
+      position: relative;
+    }
+
+    // .select__title
+    &__title {
+      width: 100%;
+      color: inherit;
+      text-align: left;
+      border: 1px solid cl(alt);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    // .select__value
+    &__value {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      min-width: 0;
+      height: 30px;
+      padding: 0 15px;
+
+      >* {
+        flex: 1 1 auto;
+      }
+
+      &::after {
+        display: flex;
+        flex: 0 0 10px;
+        align-items: center;
+        align-self: stretch;
+        justify-content: center;
+        transition: all 0.3s ease 0s;
+        content: '';
+
+        ._select-open & {
+          transform: rotate(-180deg);
+        }
+      }
+
+      &._select-pseudo-label {
+        &::before {
+          opacity: 0.5;
+          content: attr(data-pseudo-label);
+        }
+      }
+    }
+
+    // .select__content
+    &__content {
+      flex: 1 1 auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    // .select__text
+    &__text {
+      flex: 1 1 auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &__input {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+    }
+
+    // .select__options
+    &__options {
+      position: absolute;
+      top: calc(100% - 1px);
+      left: 0;
+      min-width: 100%;
+      padding: 10px 0 5px;
+      color: #000;
+      background-color: cl(bg);
+      border: 1px solid cl(bg);
+      border-top: 0;
+      border-radius: 0 0 4px 4px;
+    }
+
+    // .select__scroll
+    &__scroll {
+      // Максимальна высота
+      max-height: 200px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    // .select__option
+    &__option {
+      width: 100%;
+      padding: 5px 15px;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+
+      &._select-selected {
+        background-color: cl(alt);
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background: cl(alt);
+        }
+      }
+    }
+
+    // Конструкція додаткових даних
+    &__row {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    // &__asset {
+    // }
+
+    // &__text {
+    // }
+
+    &--show-top {
+      .select__options {
+        top: auto;
+        bottom: calc(100% - 1px);
+        padding: 5px 0 10px;
+        border: 1px solid cl(bg);
+        border-bottom: 0;
+        border-radius: 4px 4px 0 0;
+      }
+    }
+
+    // Доп классы
+    // &._select-open {
+    // }
+
+    // &._select-disabled {
+    // }
+
+    // &._select-active {
+    // }
+
+    // &._select-focus {
+    // }
+
+    // &._select-multiple {
+    // }
+
+    // &._select-checkbox {
+    // }
+  }
+
+  // Тег
+  ._select-tag {
+    cursor: pointer;
+  }
+}

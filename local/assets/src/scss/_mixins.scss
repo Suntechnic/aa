@@ -1,0 +1,171 @@
+@use 'sass:math';
+@use 'sass:meta';
+
+// Percent
+@function percent($px, $from: 100) {
+  $result: math.div($px, $from) * 100%;
+  @return $result;
+}
+
+// Rem
+@function rem($px, $current: 16) {
+  $result: math.div($px, $current) + rem;
+  @return $result;
+}
+
+// Em
+@function em($px, $current: 16) {
+  $result: math.div($px, $current) + em;
+  @return $result;
+}
+
+// Currency
+@mixin currency($sym) {
+  &::after {
+    content: '#{$sym}';
+  }
+}
+
+// Grids
+@mixin grid-cards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+  display: grid;
+  grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+  gap: $gap;
+}
+
+@mixin font($size, $line-height, $weight: null) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// == media queries
+@mixin mq($canvas, $canvas2: null) {
+  @if $canvas {
+    @media only screen and (min-width: $canvas) {
+      @content;
+    }
+  }
+}
+
+@mixin mq-range($canvas-min, $canvas-max) {
+  @if $canvas-min and $canvas-max {
+    @media only screen and (min-width: $canvas-min) and (max-width: ($canvas-max)) {
+      @content;
+    }
+  }
+}
+
+@mixin mq-max($canvas) {
+  @if $canvas {
+    @media only screen and (max-width: ($canvas)) {
+      @content;
+    }
+  }
+}
+
+@mixin mq-hover() {
+  &:hover {
+    @media (hover: hover) {
+      @content;
+    }
+  }
+}
+
+// адаптивное свойство (clamp)
+
+// stylelint-disable
+@mixin adaptiveValue(
+  $property,
+  $start-size,
+  $min-size,
+  $keep-size: 0,
+  $width-from: $max-width-container,
+  $widthTo: $min-width
+) {
+  @if ($start-size==0) {
+    $start-size: 0.000001;
+  }
+
+  @if ($min-size==0) {
+    $min-size: 0.000001;
+  }
+
+  // Для calc();
+  $addSize: math.div($start-size - $min-size, 16);
+
+  @if ($width-from == $container-width and $max-width-container == 0) {
+    $width-from: $max-width;
+  }
+
+  // Брейк-пойнты в EM
+  $width-from-media: em($width-from);
+  $width-to-media: em($widthTo);
+
+  // Формула плавающего значения
+  // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $slope: math.div(($start-size - $min-size), ($width-from - $widthTo));
+  $y-intersection: -$widthTo * $slope + $min-size;
+  @if ($y-intersection==0) {
+    $y-intersection: 0.000001;
+  }
+  $fly-value: #{rem($y-intersection)}' + ' #{$slope * 100}vw;
+
+  // Получение значения свойства
+  $property-value: #{'clamp(' rem($min-size) ',' $fly-value ',' rem($start-size)
+    ')'};
+
+  // Если отрицательные значения
+  @if ($min-size > $start-size) {
+    $property-value: #{'clamp('
+      rem($start-size)
+      ','
+      $fly-value
+      ','
+      rem($min-size)
+      ')'};
+  }
+
+  // Устанавливаем значение по умолчанию
+  @if $keep-size != 1 and $keep-size != 3 {
+    @media (min-width: $width-from-media) {
+      #{$property}: rem($start-size);
+    }
+  }
+
+  // Адаптируем размер в промежутке между указанными ширинами viewport
+  @media (min-width: $width-to-media) and (max-width: $width-from-media) {
+    // Если поддерживается clamp();
+    @supports (#{$property}: $property-value) {
+      #{$property}: $property-value;
+    }
+    // Если не поддерживается clamp();
+    @supports not (#{$property}: $property-value) {
+      #{$property}: calc(
+        #{rem($min-size)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div(
+            $width-from,
+            16
+          ) - math.div($widthTo, 16)}
+      );
+    }
+  }
+
+  @if $keep-size != 1 and $keep-size != 2 {
+    @media (max-width: $width-to-media) {
+      #{$property}: rem($min-size);
+    }
+  }
+}
+// stylelint-enable

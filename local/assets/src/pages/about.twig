@@ -1,0 +1,8 @@
+{% set title = 'Главная страница' %}
+{% extends 'src/twig/layout.twig' %}
+{% import './src/components/about/about.twig' as about %}
+{% block content %}
+	<main class="page page--header">
+		{{about.about("section")}}
+	</main>
+{% endblock %}

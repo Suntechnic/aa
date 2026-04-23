@@ -1,0 +1,14 @@
+{% set title = 'Главная страница' %}
+{% extends 'src/twig/layout.twig' %}
+{% import './src/components/intro/intro.twig' as intro %}
+{% import './src/components/attention/attention.twig' as attention %}
+{% import './src/components/working/working.twig' as working %}
+{% import './src/components/exhibition/exhibition.twig' as exhibition %}
+{% block content %}
+	<main class="page">
+		{{intro.intro('section')}}
+		{{attention.attention('section')}}
+		{{working.working('section')}}
+		{{exhibition.exhibition('section')}}
+	</main>
+{% endblock %}

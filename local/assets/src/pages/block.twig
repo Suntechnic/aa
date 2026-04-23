@@ -1,0 +1,65 @@
+{% set title = 'Главная страница' %}
+{% extends 'src/twig/layout.twig' %}
+{% import './src/components/block/block.twig' as block %}
+{% block content %}
+	<main class="page page--header">
+		{{block.block("section")}}
+		<section class="exhibition section animate-block">
+			<div class='exhibition__container'>
+				<div class="exhibition__inner">
+					<h2 class="exhibition__title text-50 fade-up" data-watch data-watch-once>Другие статьи</h2>
+					<div class="exhibition__slider swiper js-slider-exhibition fade-up" data-watch data-watch-once>
+						<div class="exhibition__swiper swiper-wrapper">
+							<a href="javascript:void(0)" class="exhibition__card card-exhibition swiper-slide">
+								<div class="card-exhibition__img">
+									<picture>
+										<img src="./img/exhibition/05.webp" srcset="./img/exhibition/05@2x.webp 2x" alt="">
+									</picture>
+								</div>
+								<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля 2026 г</time>
+								<div class="card-exhibition__title text-22">Литьё под давлением</div>
+								<address class="card-exhibition__address text-16">
+									Амбер Плаза, Краснопролетарская ул. 36
+									<br>
+									место  Ж 1
+								</address>
+								<div class="card-exhibition__tag text-16">#технологии</div>
+							</a>
+							<a href="javascript:void(0)" class="exhibition__card card-exhibition swiper-slide">
+								<div class="card-exhibition__img">
+									<picture>
+										<img src="./img/exhibition/02.webp" srcset="./img/exhibition/02@2x.webp 2x" alt="">
+									</picture>
+								</div>
+								<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля</time>
+								<div class="card-exhibition__title text-22">"MAD RUSSIAN EVENING"</div>
+								<address class="card-exhibition__address text-16">
+									Отель Континенталь, Тверская ул. 22
+									<br>
+									место  A 1
+								</address>
+								<div class="card-exhibition__tag text-16">#выставки</div>
+							</a>
+							<a href="javascript:void(0)" class="exhibition__card card-exhibition swiper-slide">
+								<div class="card-exhibition__img">
+									<picture>
+										<img src="./img/exhibition/03.webp" srcset="./img/exhibition/03@2x.webp 2x" alt="">
+									</picture>
+								</div>
+								<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января</time>
+								<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+								<address class="card-exhibition__address text-16">
+									Амбер Плаза, Краснопролетарская ул. 36
+									<br>
+									место  Ж 1
+								</address>
+								<div class="card-exhibition__tag text-16">#выставки</div>
+							</a>
+						</div>
+						<div class="exhibition__pagination"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}

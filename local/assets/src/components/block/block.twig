@@ -1,0 +1,138 @@
+{% macro block(classes) %}
+	<section class="block {{classes}} animate-block fade-up" data-watch data-watch-once>
+		<div class='block__container'>
+			<div class="block__inner">
+				<div class="block__breadcrumb breadcrumb">
+					<ul class="breadcrumb__list">
+						<li class="breadcrumb__item text-16">
+							<a href="javascript:void(0)">
+								Блог
+							</a>
+						</li>
+						<li class="breadcrumb__item text-16">
+							<a href="javascript:void(0)">
+								Стрекоза в саду
+							</a>
+						</li>
+						<li class="breadcrumb__item text-16 breadcrumb__item--active">
+							<span>Литьё по восковой модели</span>
+						</li>
+					</ul>
+				</div>
+				<h2 class="block__title text-50">Литье по восковой модели</h2>
+				<time datetime="2016-11-18T09:54" class="block__time text-16">12 марта 2025 г</time>
+				<div class="block__img">
+					<picture>
+						<img src="./img/block/01.webp" srcset="./img/block/01@2x.webp 2x" alt="">
+					</picture>
+				</div>
+				<div class="block__description description-block">
+					<p>
+						Литьё по выплавляемым восковым моделям — одна из древнейших технологий обработки металла, которая и сегодня остаётся незаменимой в высокоточном производстве.
+					</p>
+
+					<h3>Как это работает</h3>
+
+					<p>
+						Процесс начинается с создания точной восковой копии будущей детали. Модель покрывается несколькими слоями огнеупорной керамической оболочки. После высушивания воск выплавляется, оставляя полую форму с идеальным отпечатком. В полученную оболочку заливается расплавленный металл, который заполняет мельчайшие детали рельефа.
+					</p>
+
+					<h4>Преимущества метода</h4>
+
+					<ul>
+						<li>
+							Высокая точность — допуски до ±0,1 мм
+						</li>
+						<li>
+							Сложная геометрия — возможность создания форм, недоступных другим методам
+						</li>
+						<li>
+							Качество поверхности — минимальная необходимость в дальнейшей обработке
+						</li>
+						<li>
+							Широкий выбор металлов — сталь, чугун, бронза, алюминий, титан и другие сплавы
+						</li>
+						<li>
+							Отсутствие швов и линий разъёма — монолитная структура отливки
+						</li>
+					</ul>
+
+					<h5>Итог</h5>
+
+
+					<p>
+						Литьё по восковой модели сочетает в себе вековые традиции и современные стандарты качества. Технология позволяет получать детали сложнейшей формы с минимальными отклонениями, сокращая время и затраты на последующую механическую обработку.
+					</p>
+				</div>
+				<div class="block__gallery">
+					<div class="block__slider swiper js-slider-block">
+						<div class="block__swiper swiper-wrapper">
+							<a href="./img/block/02@2x.webp" data-fslightbox="gallery" class="block__slide swiper-slide">
+								<div class="block__slide-img">
+									<picture>
+										<img src="./img/block/02.webp" srcset="./img/block/02@2x.webp 2x" alt="">
+									</picture>
+								</div>
+							</a>
+							<a href="./img/block/03@2x.webp" data-fslightbox="gallery" class="block__slide swiper-slide">
+								<div class="block__slide-img">
+									<picture>
+										<img src="./img/block/03.webp" srcset="./img/block/03@2x.webp 2x" alt="">
+									</picture>
+								</div>
+							</a>
+							<a href="./img/block/04@2x.webp" data-fslightbox="gallery" class="block__slide swiper-slide">
+								<div class="block__slide-img">
+									<picture>
+										<img src="./img/block/04.webp" srcset="./img/block/04@2x.webp 2x" alt="">
+									</picture>
+								</div>
+							</a>
+							<a href="./img/block/05@2x.webp" data-fslightbox="gallery" class="block__slide swiper-slide">
+								<div class="block__slide-img">
+									<picture>
+										<img src="./img/block/05.webp" srcset="./img/block/05@2x.webp 2x" alt="">
+									</picture>
+								</div>
+							</a>
+							<a href="./img/block/02@2x.webp" data-fslightbox="gallery" class="block__slide swiper-slide">
+								<div class="block__slide-img">
+									<picture>
+										<img src="./img/block/02.webp" srcset="./img/block/02@2x.webp 2x" alt="">
+									</picture>
+								</div>
+							</a>
+							<a href="./img/block/03@2x.webp" data-fslightbox="gallery" class="block__slide swiper-slide">
+								<div class="block__slide-img">
+									<picture>
+										<img src="./img/block/03.webp" srcset="./img/block/03@2x.webp 2x" alt="">
+									</picture>
+								</div>
+							</a>
+							<a href="./img/block/04@2x.webp" data-fslightbox="gallery" class="block__slide swiper-slide">
+								<div class="block__slide-img">
+									<picture>
+										<img src="./img/block/04.webp" srcset="./img/block/04@2x.webp 2x" alt="">
+									</picture>
+								</div>
+							</a>
+							<a href="./img/block/05@2x.webp" data-fslightbox="gallery" class="block__slide swiper-slide">
+								<div class="block__slide-img">
+									<picture>
+										<img src="./img/block/05.webp" srcset="./img/block/05@2x.webp 2x" alt="">
+									</picture>
+								</div>
+							</a>
+						</div>
+
+						<div class="block__pagination"></div>
+						<div class="block__arrows swiper-arrows">
+							<button type="button" class="block__arrow block__arrow--prev swiper-arrow" style='--icon:url("../img/icons/prev.svg")'></button>
+							<button type="button" class="block__arrow block__arrow--next swiper-arrow" style='--icon:url("../img/icons/next.svg")'></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endmacro %}

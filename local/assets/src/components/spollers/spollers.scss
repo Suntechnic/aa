@@ -1,0 +1,65 @@
+@use '../../scss/partials/imports' as *;
+
+/* stylelint-disable selector-class-pattern */
+// Сниппет (HTML): spoiler
+
+@layer component {
+  .spollers {
+    display: grid;
+    gap: 15px;
+    // Контент спойлера
+
+    &__body {}
+
+    &__item {}
+
+    // Заголовок спойлера
+    &__title {
+      position: relative;
+      width: 100%;
+      padding: 10px 15px;
+      text-align: left;
+      list-style: none;
+      cursor: default;
+
+      &::marker,
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      ._spoiler-init & {
+        cursor: pointer;
+
+        &::before,
+        &::after {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          width: 15px;
+          height: 2px;
+          background-color: currentColor;
+          transition: transform 0.5s $tr 0s;
+          content: '';
+        }
+
+        &::before {
+          transform: translate(-75%, -50%) rotate(40deg);
+        }
+
+        &::after {
+          transform: translate(0, -50%) rotate(-40deg);
+        }
+
+        &._spoiler-active {
+          &::before {
+            transform: translateX(-75%) rotate(-40deg);
+          }
+
+          &::after {
+            transform: rotate(40deg);
+          }
+        }
+      }
+    }
+  }
+}

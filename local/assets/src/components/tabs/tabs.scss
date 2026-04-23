@@ -1,0 +1,82 @@
+@use '../../scss/partials/imports' as *;
+
+/* stylelint-disable selector-class-pattern */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+
+  @include mq($tablet) {
+    gap: 3.13vw;
+  }
+  // .tabs__navigation
+  &__navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include mq($tablet) {
+      gap: 1.04vw;
+    }
+  }
+
+  // .tabs__title
+  &__title {
+    padding: 14px 10px;
+    border-radius: 10px;
+
+    font-family: var(--font-secondary);
+    background: cl(bg-secondary);
+
+    transition: all $time $tr 0s;
+
+    @include mq($tablet) {
+      padding: 1.15vw 2.08vw;
+      border-radius: 1.04vw;
+    }
+
+    @include mq($s) {
+      padding: 15.5px 20px;
+    }
+
+    @include mq-max($s) {
+      font-size: 12px;
+    }
+    &._tab-active {
+      color: cl(bg);
+      background: cl(alt);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: cl(bg);
+        background: cl(alt);
+      }
+    }
+  }
+
+  // .tabs__content
+  &__content {
+  }
+
+  // .tabs__body
+  // &__body {
+  // }
+
+  // .tabs__cards
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+
+    @include mq($tablet) {
+      gap: 3.13vw 1.04vw;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mq($m) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

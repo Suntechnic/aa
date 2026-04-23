@@ -1,0 +1,8 @@
+{% set title = 'Главная страница' %}
+{% extends 'src/twig/layout.twig' %}
+{% import './src/components/work/work.twig' as work %}
+{% block content %}
+	<main class="page page--header">
+		{{work.work("section")}}
+	</main>
+{% endblock %}

@@ -1,0 +1,18 @@
+@use '../../scss/partials/imports' as *;
+
+@layer base {
+  [class*='__container'],
+  .container {
+    --pad: 20px;
+
+    box-sizing: border-box;
+    // max-width: $max-width-container + px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--pad);
+
+    @include mq($tablet) {
+      --pad: 2.08vw;
+    }
+  }
+}

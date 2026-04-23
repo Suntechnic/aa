@@ -1,0 +1,65 @@
+{
+  "name": "vector",
+  "private": true,
+  "version": "0.3.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky install",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix",
+    "eslint": "eslint src/**/*.js",
+    "eslint:fix": "eslint src/**/*.js --fix",
+    "start": "set NODE_ENV=development & concurrently \"vite --host --open\" \"npx gulp renameStaticFoldersDev && npx gulp preDev\" \"npx gulp watcherFiles\"",
+    "build": "set NODE_ENV=production&& npx gulp preBuild && vite build --logLevel error && npx gulp afterBuild",
+    "preview": "vite preview",
+    "img": "npx gulp img",
+    "test": "npx gulp test"
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "gulp test",
+      "commit-msg": "npm run validate-commit-msg"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.1.0",
+    "@commitlint/config-conventional": "20.0.0",
+    "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v9.0.1",
+    "@prettier/plugin-pug": "3.4.2",
+    "@vituum/vite-plugin-postcss": "^1.1.0",
+    "@vituum/vite-plugin-pug": "^1.1.0",
+    "@vituum/vite-plugin-twig": "^1.1.0",
+    "concurrently": "^9.2.1",
+    "cpy": "12.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "0.4.0",
+    "gulp-copy": "^1.1.0",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-html-bem-validator": "1.0.5",
+    "gulp-imagemin": "8.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-rename": "2.0.0",
+    "gulp-w3c-html-validator": "5.3.0",
+    "husky": "9.1.7",
+    "imagemin-webp": "8.0.0",
+    "inputmask": "latest",
+    "lint-staged": "16.2.6",
+    "merge-stream": "^2.0.0",
+    "mkdirp": "3.0.1",
+    "postcss": "^8.5.6",
+    "sass": "^1.93.2",
+    "vite": "^7.1.12",
+    "vite-plugin-inspect": "^11.3.3"
+  },
+  "dependencies": {
+    "fslightbox": "^3.7.5",
+    "priority-nav": "^1.0.14",
+    "stylelint-config-recommended": "^17.0.0",
+    "swiper": "12.0.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 25 versions",
+    "defaults and supports es6-module"
+  ]
+}

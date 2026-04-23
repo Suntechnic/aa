@@ -1,0 +1,80 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .card-work {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include mq($tablet) {
+      gap: 0.89vw;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        .card-work__top {
+          border-color: cl(alt);
+        }
+
+        .card-work__title {
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: auto;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+        }
+      }
+    }
+    // .card-work__top
+
+    &__top {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid cl(bg-secondary);
+
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      transition: all $time $tr 0s;
+      @include mq($tablet) {
+        border-radius: 1.04vw;
+        padding: 0.52vw;
+        border: 0.05vw solid cl(bg-secondary);
+      }
+    }
+
+    // .card-work__img
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img,
+      picture {
+        width: auto;
+        height: auto;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
+      }
+    }
+
+    // .card-work__title
+
+    &__title {
+      text-align: center;
+    }
+  }
+}

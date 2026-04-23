@@ -1,0 +1,58 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .breadcrumb {
+    // .breadcrumb__list
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      @include mq($tablet) {
+        gap: 0.99vw;
+      }
+    }
+
+    // .breadcrumb__item
+
+    &__item {
+      color: cl(primary);
+      display: flex;
+      gap: 12px;
+      font-weight: 300;
+
+      font-family: var(--font-secondary);
+      font-size: 10px;
+      transition: all $time $tr 0s;
+      &::after {
+        content: '/';
+        color: cl(bg-secondary);
+      }
+
+      &.breadcrumb__item--active {
+        &::after {
+          content: '';
+          display: none;
+        }
+        color: cl(gry);
+        pointer-events: none;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: cl(alt);
+        }
+      }
+
+      @include mq($tablet) {
+        gap: 0.99vw;
+      }
+    }
+
+    // .breadcrumb__item--active
+
+    &__item-link--active {
+    }
+  }
+}

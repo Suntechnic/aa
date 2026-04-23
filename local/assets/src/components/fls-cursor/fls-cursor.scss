@@ -1,0 +1,84 @@
+@use '../../scss/partials/imports' as *;
+
+* {
+  cursor: none;
+}
+
+.fls-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &__shadow {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    transition: all 0.05s linear 0s;
+    will-change: transform;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 3px solid #000;
+      animation: rotate 5s infinite linear;
+      content: '';
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+    }
+  }
+
+  &__pointer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 3px;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 3px solid #000;
+      border-radius: 50%;
+      transition: all 0.3s ease 0s;
+      content: '';
+    }
+  }
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  &._hover {
+    .fls-cursor__pointer::after {
+      transform: scale(0.8);
+    }
+
+    // .fls-cursor__shadow::after {
+    // }
+  }
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  &._active {
+    .fls-cursor__pointer::after {
+      transform: scale(0.3);
+      transition: all 0.05s ease 0s;
+    }
+
+    // .fls-cursor__shadow::after {
+    // }
+  }
+}

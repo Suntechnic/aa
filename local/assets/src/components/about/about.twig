@@ -1,0 +1,22 @@
+{% macro about(classes) %}
+	<section class="about {{classes}} animate-block">
+		<div class='about__container'>
+
+			<div class="about__inner">
+				<h2 class="about__title text-50 fade-up" data-watch data-watch-once>Обо мне</h2>
+				<div class="about__img fade-up" data-watch data-watch-once>
+					<picture>
+						<img src="./img/about/01.webp" srcset="./img/about/01@2x.webp 2x" alt="">
+					</picture>
+				</div>
+				<div class="about__info fade-up" data-watch data-watch-once>
+					<div class="about__text text-22">
+						Родился в Москве в 1967 году.
+						<br>
+						Живу по сей день :)
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endmacro %}

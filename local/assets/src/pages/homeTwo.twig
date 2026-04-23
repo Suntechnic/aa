@@ -1,0 +1,58 @@
+{% set title = 'Главная страница' %}
+{% extends 'src/twig/layout.twig' %}
+{% import './src/components/intro/intro.twig' as intro %}
+{% import './src/components/attention/attention.twig' as attention %}
+{% import './src/components/working/working.twig' as working %}
+{% import './src/components/exhibition/exhibition.twig' as exhibition %}
+{% block content %}
+	<main class="page">
+		{{intro.intro('section')}}
+		{{attention.attention('section')}}
+		{{working.working('section')}}
+		<section class="exhibition section">
+			<div class='exhibition__container'>
+				<div class="exhibition__inner">
+					<h2 class="exhibition__title text-50">Ближайшая
+						<br>
+						выставка</h2>
+					<div class="exhibition__slider swiper js-slider-exhibition">
+						<div class="exhibition__swiper swiper-wrapper">
+							<a href="javascript:void(0)" class="exhibition__card card-exhibition swiper-slide">
+
+								<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января</time>
+								<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+								<address class="card-exhibition__address text-16">
+									Амбер Плаза, Краснопролетарская ул. 36
+									<br>
+									место  Ж 1
+								</address>
+							</a>
+							<a href="javascript:void(0)" class="exhibition__card card-exhibition swiper-slide">
+
+								<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">18 апреля</time>
+								<div class="card-exhibition__title text-22">"MAD RUSSIAN EVENING"</div>
+								<address class="card-exhibition__address text-16">
+									Отель Континенталь, Тверская ул. 22
+									<br>
+									место  A 1
+								</address>
+							</a>
+							<a href="javascript:void(0)" class="exhibition__card card-exhibition swiper-slide">
+
+								<time datetime="2016-11-18T09:54" class="card-exhibition__time text-14">23-25 января</time>
+								<div class="card-exhibition__title text-22">"Симфония самоцветов"</div>
+								<address class="card-exhibition__address text-16">
+									Амбер Плаза, Краснопролетарская ул. 36
+									<br>
+									место  Ж 1
+								</address>
+							</a>
+						</div>
+						<div class="exhibition__pagination"></div>
+					</div>
+					<a href="javascript:void(0)" class="exhibition__showmore text-16">Все статьи ></a>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}

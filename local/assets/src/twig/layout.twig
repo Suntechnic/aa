@@ -1,0 +1,21 @@
+{% import '../components/head/head.twig' as head %}
+{% import '../components/header/header.twig' as header %}
+{% import '../components/footer/footer.twig' as footer %}
+
+<!DOCTYPE html>
+<html lang="ru">
+	{{ head.head(title) }}
+
+	<body>
+		<div class="wrapper">
+			<div class="preloader">
+				<span class="loader"></span>
+			</div>
+			{{header.header()}}
+			{% block content %}{% endblock %}
+			{{footer.footer()}}
+		</div>
+		 <script type="module" src="/src/js/main.js"></script>
+	</body>
+
+</html>

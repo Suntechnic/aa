@@ -1,0 +1,24 @@
+{% macro mistake(classes) %}
+	<section class="mistake {{classes}} animate-block fade-up" data-watch data-watch-once>
+		<div class='mistake__container'>
+			<div class="mistake__inner">
+				<div class="mistake__img">
+					<picture>
+						<img src="./img/mistake/01.webp" srcset="./img/mistake/01@2x.webp 2x" alt="">
+					</picture>
+				</div>
+				<div class="mistake__info">
+					<div class="mistake__title text-40">
+						Страница не найдена!
+					</div>
+					<div class="mistake__text text-16">
+						Возможно, она была удалена или перемещена в другой раздел.
+						<br>
+						Вы можете вернуться на
+						<a href="javascript:void(0)">главную страницу</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endmacro %}

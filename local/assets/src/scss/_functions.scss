@@ -1,0 +1,20 @@
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:color';
+@use 'sass:string';
+
+@function hextorgb($hex) {
+  @return color.channel($hex, 'red', $space: rgb),
+  color.channel($hex, 'green', $space: rgb),
+  color.channel($hex, 'blue', $space: rgb);
+}
+
+@function cl($name, $opacity: false) {
+  @if $opacity {
+    @return rgba(var(--color-#{string.unquote($name)}--rgb), $opacity);
+  }
+
+  @else {
+    @return var(--color-#{string.unquote($name)});
+  }
+}

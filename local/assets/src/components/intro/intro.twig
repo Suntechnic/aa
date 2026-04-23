@@ -1,0 +1,33 @@
+{% macro intro(classes) %}
+	<section class="intro {{classes}} animate-block">
+		<div class="intro__slider swiper js-slider-intro">
+			<div class="intro__swiper swiper-wrapper">
+				<div class="intro__slide swiper-slide">
+					<div class="intro__slide-img fade-scale" data-watch data-watch-once>
+						<picture>
+							<img src="./img/intro/01.webp" srcset="./img/intro/01@2x.webp 2x" alt="">
+						</picture>
+					</div>
+				</div>
+				<div class="intro__slide swiper-slide">
+					<div class="intro__slide-img">
+						<picture>
+							<img src="./img/intro/01.webp" srcset="./img/intro/01@2x.webp 2x" alt="">
+						</picture>
+					</div>
+				</div>
+				<div class="intro__slide swiper-slide">
+					<div class="intro__slide-img">
+						<picture>
+							<img src="./img/intro/01.webp" srcset="./img/intro/01@2x.webp 2x" alt="">
+						</picture>
+					</div>
+				</div>
+			</div>
+			<div class="intro__arrows swiper-arrows">
+				<button type="button" class="intro__arrow intro__arrow--prev swiper-arrow" style='--icon:url("../img/icons/prev.svg")'></button>
+				<button type="button" class="intro__arrow intro__arrow--next swiper-arrow" style='--icon:url("../img/icons/next.svg")'></button>
+			</div>
+		</div>
+	</section>
+{% endmacro %}

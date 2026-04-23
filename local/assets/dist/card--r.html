@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<!-- не забыть удалить мета тег robots ниже-->
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>Главная страница</title>
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./img/favicon/favicon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="./img/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="./android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16">
+	<link rel="mask-icon" href="./safari-pinned-tab.svg">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<style>
+		.preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background: #0f0f0f;
+			z-index: 1400;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.3s ease-in 0s;
+		}
+
+		.loader,
+		.loader:before,
+		.loader:after {
+			border-radius: 50%;
+			width: 2.5em;
+			height: 2.5em;
+			animation-fill-mode: both;
+			animation: bblFadInOut 1.8s infinite ease-in-out;
+		}
+
+		.loader {
+			color: #cfbd90;
+			font-size: 7px;
+			position: relative;
+			text-indent: -9999em;
+			transform: translateZ(0);
+			animation-delay: -0.16s;
+		}
+
+		.loader:before,
+		.loader:after {
+			content: '';
+			position: absolute;
+			top: 0;
+		}
+
+		.loader:before {
+			left: -3.5em;
+			animation-delay: -0.32s;
+		}
+
+		.loader:after {
+			left: 3.5em;
+		}
+
+		@keyframes bblFadInOut {
+			0% {
+				box-shadow: 0 2.5em 0 -1.3em;
+			}
+
+			40% {
+				box-shadow: 0 2.5em 0 0;
+			}
+
+			80% {
+				box-shadow: 0 2.5em 0 -1.3em;
+			}
+
+			100% {
+				box-shadow: 0 2.5em 0 -1.3em;
+			}
+		}
+	</style>
+	<script>
+		var BASE_URL = './'; // Нужен, если наблюдаются ошибки в импортах чанков JS
+	</script>
+
+	<script type="module" crossorigin src="js/main.uO5X2VSH.js"></script>
+	<link rel="stylesheet" crossorigin href="css/main.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="preloader">
+			<span class="loader"></span>
+		</div>
+		<header class="header">
+			<div class="header__menu menu">
+				<div class="menu__top">
+					<button type="button" class="menu__icon icon-menu" aria-label='Меню'>
+						<span></span>
+					</button>
+					<div class="menu__info">
+						<a href="javascript:void(0)" class="menu__logo">
+							<img src="./img/header/01.svg" alt="">
+						</a>
+						<a href="javascript:void(0)" class="menu__gallery text-16">Галерея работа</a>
+					</div>
+					<ul class="menu__pages" data-da=".menu__bottom, 992, 0">
+						<li class="menu__page">
+							<a href="javascript:void(0)" class="menu__page-link text-16">Обо мне</a>
+						</li>
+						<li class="menu__page">
+							<a href="javascript:void(0)" class="menu__page-link text-16">Мои работы</a>
+						</li>
+						<li class="menu__page">
+							<a href="javascript:void(0)" class="menu__page-link text-16">Блог</a>
+						</li>
+						<li class="menu__page">
+							<a href="javascript:void(0)" class="menu__page-link text-16">Контакты</a>
+						</li>
+					</ul>
+					<a href="javascript:void(0)" class="menu__callback" style='--icon:url(&quot;/img/icons/02.svg&quot;)'></a>
+
+				</div>
+				<div class="menu__bottom">
+					<nav class="menu__body js-nav" data-da=".menu__pages, 992, 2">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Кольца и браслеты</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Ножи</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Запонки и пуговицы</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Броши и подвески</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Декоративные композиции</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Пряжки</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Серьги</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Темляки и бусины</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Фигурки</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Разное</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Фигурки</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Темляки и бусины</a>
+							</li>
+							<li class="menu__item">
+								<a href="javascript:void(0)" class="menu__link text-16">Серьги</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main class="page page--header">
+			<section class="product section animate-block">
+				<div class='product__container'>
+					<div class="product__body">
+						<div class="product__top">
+							<div class="product__breadcrumb breadcrumb fade-up" data-watch data-watch-once>
+								<ul class="breadcrumb__list">
+									<li class="breadcrumb__item text-16">
+										<a href="javascript:void(0)">
+											Темляки и бусины
+										</a>
+									</li>
+									<li class="breadcrumb__item text-16 breadcrumb__item--active">
+										<span>Стрекоза в саду</span>
+									</li>
+								</ul>
+							</div>
+							<h2 class="product__title text-50 fade-up" data-watch data-watch-once>Стрекоза в саду</h2>
+						</div>
+						<div class="product__inner">
+							<div class="product__sliders fade-up" data-watch data-watch-once>
+								<div class="product__thumbs swiper js-slider-thumbs">
+									<div class="product__swiper swiper-wrapper">
+										<div class="product__gallery swiper-slide">
+											<div class="product__gallery-img">
+												<picture>
+													<img src="./img/product/01.webp" srcset="./img/product/01@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</div>
+										<div class="product__gallery swiper-slide">
+											<div class="product__gallery-img">
+												<picture>
+													<img src="./img/product/02.webp" srcset="./img/product/02@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</div>
+										<div class="product__gallery swiper-slide">
+											<div class="product__gallery-img">
+												<picture>
+													<img src="./img/product/03.webp" srcset="./img/product/03@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="product__slider swiper js-slider-product">
+									<div class="product__swiper swiper-wrapper">
+										<div class="product__slide swiper-slide">
+											<div class="product__slide-img">
+												<picture>
+													<img src="./img/product/04.webp" srcset="./img/product/04@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</div>
+										<div class="product__slide swiper-slide">
+											<div class="product__slide-img">
+												<picture>
+													<img src="./img/product/04.webp" srcset="./img/product/04@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</div>
+										<div class="product__slide swiper-slide">
+											<div class="product__slide-img">
+												<picture>
+													<img src="./img/product/04.webp" srcset="./img/product/04@2x.webp 2x" alt="">
+												</picture>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="product__content fade-up" data-watch data-watch-once>
+								<div class="product__info">
+									<div class="product__text text-16">
+										Изящная серебряная бусина ручной работы с объёмным рельефом стрекозы среди цветов и листьев. Выполнена
+										из стерлингового серебра 925 пробы с эффектом античного оксидирования. Совместима с браслетами Pandora, Soufeel, Trollbeads и другими системами
+										с диаметром отверстия 4.5–5 мм.
+									</div>
+									<div class="product__items">
+										<dl class="product__item">
+											<dt class="product__category text-16">Металл:</dt>
+											<dd class="product__value text-16">Серебро 925 пробы</dd>
+										</dl>
+										<dl class="product__item">
+											<dt class="product__category text-16">Покрытие:
+											</dt>
+											<dd class="product__value text-16">Оксидирование</dd>
+										</dl>
+										<dl class="product__item">
+											<dt class="product__category text-16">Диаметр бусины:
+											</dt>
+											<dd class="product__value text-16">12 мм</dd>
+										</dl>
+										<dl class="product__item">
+											<dt class="product__category text-16">Диаметр отверстия:
+											</dt>
+											<dd class="product__value text-16">4,5 мм</dd>
+										</dl>
+										<dl class="product__item">
+											<dt class="product__category text-16">Вес:
+											</dt>
+											<dd class="product__value text-16">5 гр</dd>
+										</dl>
+										<dl class="product__item">
+											<dt class="product__category text-16">Технология:
+											</dt>
+											<dd class="product__value text-16">Литьё по восковой модели</dd>
+										</dl>
+										<dl class="product__item">
+											<dt class="product__category text-16">Год:
+											</dt>
+											<dd class="product__value text-16">2021</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="working section animate-block">
+				<div class='working__container'>
+					<div class="working__inner working__inner--two">
+						<h2 class="working__title text-50 fade-up" data-watch data-watch-once>Другие работы</h2>
+						<div class="working__slider swiper js-slider-working fade-up" data-watch data-watch-once>
+							<div class="working__swiper swiper-wrapper">
+								<div class="working__card card-working swiper-slide">
+									<div class="card-working__slider swiper js-slider-card">
+										<div class="card-working__swiper swiper-wrapper">
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/01.webp" srcset="./img/working/01@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/02.webp" srcset="./img/working/02@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/03.webp" srcset="./img/working/03@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+										</div>
+										<div class="card-working__pagination"></div>
+									</div>
+									<div class="card-working__content">
+										<a href="javascript:void(0)" class="card-working__category text-14">Кольца и браслеты</a>
+										<a href="javascript:void(0)" class="card-working__title text-18">Мимоза</a>
+									</div>
+								</div>
+								<div class="working__card card-working swiper-slide">
+									<div class="card-working__slider swiper js-slider-card">
+										<div class="card-working__swiper swiper-wrapper">
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/02.webp" srcset="./img/working/02@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/03.webp" srcset="./img/working/03@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+										</div>
+										<div class="card-working__pagination"></div>
+									</div>
+									<div class="card-working__content">
+										<a href="javascript:void(0)" class="card-working__category text-14">Броши и подвески</a>
+										<a href="javascript:void(0)" class="card-working__title text-18">Нефритовая рыба</a>
+									</div>
+								</div>
+								<div class="working__card card-working swiper-slide">
+									<div class="card-working__slider swiper js-slider-card">
+										<div class="card-working__swiper swiper-wrapper">
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/03.webp" srcset="./img/working/03@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/02.webp" srcset="./img/working/02@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+										</div>
+										<div class="card-working__pagination"></div>
+									</div>
+									<div class="card-working__content">
+										<a href="javascript:void(0)" class="card-working__category text-14">Кольца и браслеты</a>
+										<a href="javascript:void(0)" class="card-working__title text-18">Волны и птицы</a>
+									</div>
+								</div>
+								<div class="working__card card-working swiper-slide">
+									<div class="card-working__slider swiper js-slider-card">
+										<div class="card-working__swiper swiper-wrapper">
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/01.webp" srcset="./img/working/01@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+											<a href="javascript:void(0)" class="card-working__slide swiper-slide">
+												<div class="card-working__img">
+													<picture>
+														<img src="./img/working/04.webp" srcset="./img/working/04@2x.webp 2x" alt="">
+													</picture>
+												</div>
+											</a>
+										</div>
+										<div class="card-working__pagination"></div>
+									</div>
+									<div class="card-working__content">
+										<a href="javascript:void(0)" class="card-working__category text-14">Темляки и бусины</a>
+										<a href="javascript:void(0)" class="card-working__title text-18">Стрекоза</a>
+									</div>
+								</div>
+							</div>
+							<div class="working__navigation">
+								<button type="button" class="working__arrow working__arrow--prev swiper-arrow" style='--icon:url(&quot;/img/icons/prev.svg&quot;)'></button>
+								<div class="working__pagination"></div>
+								<button type="button" class="working__arrow working__arrow--next swiper-arrow" style='--icon:url(&quot;/img/icons/next.svg&quot;)'></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__inner">
+					<div class="footer__info">
+						<a href="javascript:void(0)" class="footer__logo">
+							<img src="./img/footer/01.svg" alt="">
+						</a>
+						<div class="footer__items">
+							<div class="footer__item text-14">© 2026 Галерея работ Андрея Аввакумова. Все права защищены.</div>
+							<a href="javascript:void(0)" class="footer__item text-14">Политика конфиденциальности</a>
+						</div>
+					</div>
+					<div class="footer__content">
+						<div class="footer__row">
+							<a href="javascript:void(0)" class="footer__column text-14">+7 916 602-91-93</a>
+							<a href="javascript:void(0)" class="footer__column text-14">li3art@yandex.ru</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+</body>
+
+</html>

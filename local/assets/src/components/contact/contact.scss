@@ -1,0 +1,149 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .contact {
+    // .contact__container
+
+    &__container {
+    }
+
+    // .contact__inner
+
+    &__inner {
+      width: 100%;
+      max-width: 1062px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      @include mq($tablet) {
+        max-width: 55.31vw;
+        gap: 5.36vw;
+      }
+    }
+
+    // .contact__title
+
+    &__title {
+      font-weight: 300;
+      text-align: center;
+    }
+
+    // .contact__info
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+
+      @include mq($tablet) {
+        gap: 1.35vw;
+      }
+    }
+
+    // .contact__link
+
+    &__link {
+      font-weight: 300;
+
+      transition: all $time $tr 0s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: cl(alt);
+        }
+      }
+      &.text-22 {
+        font-size: 16px;
+        @include mq($tablet) {
+          font-size: 1.15vw;
+          line-height: 136.364%; /* 136.364% */
+        }
+
+        @include mq($s) {
+          font-size: 18px;
+        }
+      }
+      &.text-70 {
+        color: cl(gry);
+      }
+    }
+
+    // .contact__content
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      @include mq($tablet) {
+        gap: 1.41vw;
+      }
+    }
+
+    // .contact__content-title
+
+    &__content-title {
+      text-align: center;
+      font-weight: 300;
+
+      font-size: 20px;
+      @include mq($tablet) {
+        font-size: 1.15vw;
+        line-height: 136.364%; /* 136.364% */
+      }
+
+      @include mq($s) {
+        font-size: 18px;
+      }
+    }
+
+    // .contact__content-items
+
+    &__content-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    // .contact__content-item
+
+    &__content-item {
+      padding: 0px 41px;
+      border-right: 1px solid cl(blck);
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      @include mq($tablet) {
+        padding: 0px 2.14vw;
+        border-right: 0.05vw solid cl(blck);
+
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+          border: none;
+        }
+      }
+    }
+
+    // .contact__content-link
+
+    &__content-link {
+      font-weight: 300;
+      transition: all $time $tr 0s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: cl(alt);
+        }
+      }
+    }
+  }
+}

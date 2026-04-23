@@ -1,0 +1,84 @@
+@use '../../scss/partials/imports' as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  @include mq($tablet) {
+    gap: 0.52vw;
+  }
+
+  // .pagination__arrow
+  // &__arrow {
+  // }
+
+  // .pagination__list
+  &__list {
+    display: flex;
+    gap: 10px;
+
+    @include mq($tablet) {
+      gap: 0.52vw;
+    }
+
+    // li {
+    // }
+  }
+
+  // .pagination__item
+  &__item {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --size: 40px;
+    min-width: var(--size);
+    height: var(--size);
+    flex: 0 0 var(--size);
+    border: 1px solid cl(bg-secondary);
+    padding: 0px 10px;
+    color: cl(gry);
+
+    transition: all $time $tr 0s;
+
+    @include mq($tablet) {
+      padding: 0px 0.52vw;
+      border: 0.05vw solid cl(bg-secondary);
+      --size: 2.08vw;
+      border-radius: 0.26vw;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: cl(primary);
+        color: cl(primary);
+      }
+    }
+
+    @include mq-max($s) {
+      font-size: 12px;
+      --size: 30px;
+    }
+
+    &.active {
+      color: cl(alt);
+      border-color: cl(alt);
+      pointer-events: none;
+    }
+
+    &.pagination__item--glasses {
+      border: none;
+      align-items: flex-end;
+      width: 29px;
+      min-width: 0px;
+
+      @include mq($tablet) {
+        width: 1.51vw;
+        min-width: 0px;
+      }
+    }
+  }
+}

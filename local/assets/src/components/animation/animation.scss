@@ -1,0 +1,148 @@
+@use '../../scss/partials/imports' as *;
+
+.loaded {
+  .preloader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .fade-up {
+    @include mq($tablet) {
+      transform: translateY(80px);
+      opacity: 0;
+      &._watcher-view {
+        animation: slide-top02 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
+    }
+  }
+
+  .fade-scale {
+    @include mq($tablet) {
+      transform: scale(1.1);
+
+      &._watcher-view {
+        animation: slide-scale 0.3s linear both;
+      }
+    }
+  }
+  .fade-opacity {
+    @include mq($tablet) {
+      opacity: 0;
+
+      &._watcher-view {
+        animation: slide-top03 1s linear both;
+      }
+    }
+  }
+}
+
+.swiper-arrows {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.swiper-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  pointer-events: all;
+  border: 0.08vw solid #fff;
+  --size: 30px;
+  width: var(--size);
+  height: var(--size);
+  flex: 0 0 var(--size);
+  transition: all $time $tr 0s;
+
+  @include mq($tablet) {
+    --size: 2.6vw;
+    border-radius: 0.78vw;
+  }
+
+  &::before {
+    content: '';
+    mask: var(--icon) center center/contain no-repeat;
+    -webkit-mask: var(--icon) center center/contain no-repeat;
+    background: cl(primary);
+
+    --size: 10px;
+    width: var(--size);
+    height: var(--size);
+
+    transition: all $time $tr 0s;
+
+    @include mq($tablet) {
+      --size: 0.94vw;
+    }
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: cl(primary);
+      &::before {
+        content: '';
+        background: cl(bg);
+      }
+    }
+  }
+}
+
+.section {
+  margin-bottom: 60px;
+
+  @include mq($tablet) {
+    margin-bottom: 9.38vw;
+  }
+}
+
+.swiper-notification {
+  display: none;
+}
+
+@keyframes slide-top02 {
+  0% {
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slide-top03 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-scale {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.swiper-pagination-lock {
+  display: none !important;
+}
+
+.swiper-pagination-bullet {
+  transition: all $time $tr 0s;
+  cursor: pointer;
+}

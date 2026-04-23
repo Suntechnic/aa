@@ -1,0 +1,13 @@
+@use '../../scss/partials/imports' as *;
+
+@layer component {
+  .page {
+    &.page--header {
+      padding-top: calc(var(--header) + 36px);
+
+      @include mq($tablet) {
+        padding-top: calc(var(--header) + 5.83vw);
+      }
+    }
+  }
+}
