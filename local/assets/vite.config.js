@@ -6,6 +6,7 @@ import Inspect from 'vite-plugin-inspect';
 import mqpacker from '@hail2u/css-mqpacker';
 
 export default {
+  base: './',
   plugins: [
     Inspect(),
     vituum(),
