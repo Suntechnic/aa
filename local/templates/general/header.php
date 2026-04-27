@@ -1,6 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 <?include(\Bitrix\Main\Application::getDocumentRoot().'/local/templates/.default/header.php');
 
+$bxApp = \Bitrix\Main\Application::getInstance();
+$router = $bxApp->getRouter();
+
 //$APPLICATION->ShowPanel();
 ?>
 <header class="header">
@@ -13,14 +16,14 @@
                 <a href="/" class="menu__logo">
                     <img src="/local/assets/dist/img/header/01.svg" alt="">
                 </a>
-                <a href="/gallery/" class="menu__gallery text-16">Галерея работа</a>
+                <a href="<?=$router->route('gallery');?>" class="menu__gallery text-16">Галерея работа</a>
             </div>
             <ul class="menu__pages" data-da=".menu__bottom, 992, 0">
                 <li class="menu__page">
                     <a href="javascript:void(0)" class="menu__page-link text-16">Обо мне</a>
                 </li>
                 <li class="menu__page">
-                    <a href="javascript:void(0)" class="menu__page-link text-16">Мои работы</a>
+                    <a href="<?=$router->route('works');?>" class="menu__page-link text-16">Мои работы</a>
                 </li>
                 <li class="menu__page">
                     <a href="javascript:void(0)" class="menu__page-link text-16">Блог</a>
@@ -33,50 +36,34 @@
 
         </div>
         <div class="menu__bottom">
-            <nav class="menu__body js-nav" data-da=".menu__pages, 992, 2">
-                <ul class="menu__list">
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Кольца и браслеты</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Ножи</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Запонки и пуговицы</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Броши и подвески</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Декоративные композиции</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Пряжки</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Серьги</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Темляки и бусины</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Фигурки</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Разное</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Фигурки</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Темляки и бусины</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="javascript:void(0)" class="menu__link text-16">Серьги</a>
-                    </li>
-                </ul>
-            </nav>
+            <?$APPLICATION->IncludeComponent(
+                    'x:ib.sections',
+                    'menu',
+                    Array(
+                            'AJAX_MODE' => 'N',
+                            'ELEMENTS_COUNT' => 12,
+                            'SORT' => ['SORT'=>'ASC'],
+                            
+                            'FILTER' => [
+                                    'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),
+                                    'ACTIVE' => 'Y',
+                                    'ACTIVE_DATE' => 'Y',
+                                ],
+                            'SELECT' => [
+                                    'ID',
+                                    'NAME',
+                                    'CODE',
+                                    'IBLOCK_ID',
+                                    'SECTION_PAGE_URL',
+                            ],
+                            
+                            'CACHE_TYPE' => APPLICATION_ENV=='dev'?'N':'A',
+                            'CACHE_TIME' => 3600,
+                            'CACHE_FILTER' => 'Y',
+                            'CACHE_GROUPS' => 'Y',
+                        )
+                );?>
         </div>
     </div>
 </header>
-<main class="page">
+<main class="<?=$APPLICATION->ShowProperty('main_class')?>">
