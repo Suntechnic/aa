@@ -33,28 +33,7 @@ $this->setFrameMode(true);
                 <?/*?>
                 <a href="javascript:void(0)" class="catalog__btn btn btn--icon text-16" style='--icon:url(&quot;img/icons/01.svg&quot;)'>Показать ещё</a>
                 <?/**/?>
-                <div class="catalog__pagination pagination">
-                    <ul class="pagination__list">
-                        <li>
-                            <a href="javascript:void(0)" class="pagination__item text-16 active">1</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="pagination__item text-16">2</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="pagination__item text-16">3</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="pagination__item text-16">4</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="pagination__item pagination__item--glasses text-16">...</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="pagination__item text-16">8</a>
-                        </li>
-                    </ul>
-                </div>
+                <?=$arResult['NAV_STRING']?>
             </div>
         </div>
     </div>

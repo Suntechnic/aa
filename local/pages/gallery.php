@@ -15,6 +15,8 @@ $dctFilter = [
 if($SectionCode) {
     $dctFilter['SECTION_CODE'] = $SectionCode;
 }
+
+$Page = $request->get('PAGEN_1') ?: 1;
 ?>
 
 <?$APPLICATION->IncludeComponent(
@@ -22,7 +24,7 @@ if($SectionCode) {
         'gallery',
         Array(
                 'AJAX_MODE' => 'N',
-                'ELEMENTS_COUNT' => 4,
+                'ELEMENTS_COUNT' => 1,
                 'SORT' => ['SORT'=>'ASC'],
                 
                 'FILTER' => $dctFilter,
@@ -44,7 +46,7 @@ if($SectionCode) {
                         'TEMPLATE' => '',
                         'SHOW_ALWAYS' => 'N',
                         'SHOW_ALL' => 'N',
-                        'PAGE' => 1,
+                        'PAGE' => $Page,
                     ],
                 
                 
