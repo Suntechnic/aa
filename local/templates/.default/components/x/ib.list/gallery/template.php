@@ -24,7 +24,9 @@ $this->setFrameMode(true);
             <?endif?>
             <div class="catalog__row fade-up" data-watch data-watch-once>
                 <?foreach($arResult['ITEMS'] as $dctItem): $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];?>
-                <?include('template.item.php');?>
+                <div class="catalog__column card-working">
+                    <?include('template.item.php');?>
+                </div>
                 <?endforeach?>
             </div>
             <div class="catalog__bottom fade-up" data-watch data-watch-once>

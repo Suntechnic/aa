@@ -22,14 +22,13 @@ if($SectionCode) {
         'gallery',
         Array(
                 'AJAX_MODE' => 'N',
-                'ELEMENTS_COUNT' => 12,
+                'ELEMENTS_COUNT' => 4,
                 'SORT' => ['SORT'=>'ASC'],
                 
                 'FILTER' => $dctFilter,
                 'SELECT' => [
                         'NAME',
                         'DETAIL_PAGE_URL',
-                        'PREVIEW_PICTURE',
                         'IBLOCK_SECTION_ID',
                         'PROPERTY_PHOTOS'
                     ],
