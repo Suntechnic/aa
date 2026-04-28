@@ -15,4 +15,12 @@ return function (RoutingConfigurator $routes)
             $routes->name('gallery-element')
                     ->get('{SectionCode}/{ElementCode}/', new PublicPageController('/local/pages/gallery-element.php'));
         });
+    // блог    
+    $routes->name('blog')
+            ->get('/blog/', new PublicPageController('/local/pages/blog.php'));
+    // элемент блога
+    $routes->prefix('blog')->group(function (RoutingConfigurator $routes) {
+            $routes->name('blog-element')
+                    ->get('{ElementCode}/', new PublicPageController('/local/pages/blog-element.php'));
+        });
 };
