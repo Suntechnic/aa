@@ -27,8 +27,10 @@ $Page = $request->get('PAGEN_1') ?: 1;
                 'SELECT' => [
                         'NAME',
                         'DETAIL_PAGE_URL',
-                        'IBLOCK_SECTION_ID',
-                        'PROPERTY_PHOTOS'
+                        'DATE_ACTIVE_FROM','ACTIVE_FROM_X','ACTIVE_FROM','TIMESTAMP_X',
+                        'PREVIEW_TEXT',
+                        'PROPERTY_TAGS',
+                        'PROPERTY_PHOTOS', 
                     ],
                 
                 'CACHE_TYPE' => APPLICATION_ENV=='dev'?'N':'A',

@@ -24,7 +24,7 @@ $Page = $request->get('PAGEN_1') ?: 1;
         'gallery',
         Array(
                 'AJAX_MODE' => 'N',
-                'ELEMENTS_COUNT' => 1,
+                'ELEMENTS_COUNT' => 4,
                 'SORT' => ['SORT'=>'ASC'],
                 
                 'FILTER' => $dctFilter,

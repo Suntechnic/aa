@@ -21,7 +21,6 @@ if(!$arResult["NavShowAlways"])
 $strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryString"]."&amp;" : "");
 $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQueryString"] : "");
 
-\Kint::dump($arResult);
 $BASE_URL = $arResult["sUrlPath"].'?'.$strNavQueryString.'PAGEN_'.$arResult["NavNum"].'=';
 ?>
 

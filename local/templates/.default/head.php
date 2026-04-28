@@ -100,6 +100,10 @@
 
 $assets = \Bitrix\Main\Page\Asset::getInstance();
 
+\Bitrix\Main\UI\Extension::load([
+        'main.core'
+    ]);
+
 $assets->addCss('/local/assets/dist/css/main.css');
 $assets->addString('<script type="module" crossorigin src="/local/assets/dist/js/main.BYgYxPm4.js"></script>');
 
