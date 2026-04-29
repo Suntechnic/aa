@@ -1,5 +1,8 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+/**
+ * @var CMain $APPLICATION
+ */
 $APPLICATION->SetTitle('Галерея');
 $APPLICATION->SetPageProperty('title', 'Галерея');
 

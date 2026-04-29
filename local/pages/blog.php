@@ -15,6 +15,8 @@ $dctFilter = [
         'ACTIVE' => 'Y',
         'ACTIVE_DATE' => 'Y',
     ];
+$Tag = $request->get('tag');
+if($Tag) $dctFilter['PROPERTY_TAGS'] = $Tag;
 
 $Page = $request->get('PAGEN_1') ?: 1;
 ?>
@@ -24,7 +26,7 @@ $Page = $request->get('PAGEN_1') ?: 1;
         'blog',
         Array(
                 'AJAX_MODE' => 'N',
-                'ELEMENTS_COUNT' => 12,
+                'ELEMENTS_COUNT' => 1,
                 'SORT' => ['SORT'=>'ASC'],
                 
                 'FILTER' => $dctFilter,
@@ -56,7 +58,11 @@ $Page = $request->get('PAGEN_1') ?: 1;
                 'AJAX_OPTION_JUMP' => 'N',
                 'AJAX_OPTION_STYLE' => 'Y',
                 'AJAX_OPTION_HISTORY' => 'N',
-                'AJAX_OPTION_ADDITIONAL' => ''
+                'AJAX_OPTION_ADDITIONAL' => '',
+
+                'TEMPLATE' => [
+                    'TAG' => $Tag
+                ]
             )
     );?>
 

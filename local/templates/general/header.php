@@ -1,6 +1,10 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 <?include(\Bitrix\Main\Application::getDocumentRoot().'/local/templates/.default/header.php');
 
+/**
+ * @var CMain $APPLICATION
+ */
+
 $bxApp = \Bitrix\Main\Application::getInstance();
 $router = $bxApp->getRouter();
 
@@ -26,7 +30,7 @@ $router = $bxApp->getRouter();
                     <a href="<?=$router->route('works');?>" class="menu__page-link text-16">Мои работы</a>
                 </li>
                 <li class="menu__page">
-                    <a href="javascript:void(0)" class="menu__page-link text-16">Блог</a>
+                    <a href="<?=$router->route('blog');?>" class="menu__page-link text-16">Блог</a>
                 </li>
                 <li class="menu__page">
                     <a href="javascript:void(0)" class="menu__page-link text-16">Контакты</a>
@@ -66,4 +70,4 @@ $router = $bxApp->getRouter();
         </div>
     </div>
 </header>
-<main class="<?=$APPLICATION->ShowProperty('main_class')?>">
+<main class="<?$APPLICATION->ShowProperty('main_class')?>">
