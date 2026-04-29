@@ -1,5 +1,9 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+/**
+ * @var CMain $APPLICATION
+ */
+
 $APPLICATION->SetTitle('Блог');
 $APPLICATION->SetPageProperty('title', 'Блог');
 
@@ -29,8 +33,8 @@ $Page = $request->get('PAGEN_1') ?: 1;
                         'DETAIL_PAGE_URL',
                         'DATE_ACTIVE_FROM','ACTIVE_FROM_X','ACTIVE_FROM','TIMESTAMP_X',
                         'PREVIEW_TEXT',
-                        'PROPERTY_TAGS',
-                        'PROPERTY_PHOTOS', 
+                        'PROPERTY_TAGS', 
+                        'PREVIEW_PICTURE',  
                     ],
                 
                 'CACHE_TYPE' => APPLICATION_ENV=='dev'?'N':'A',

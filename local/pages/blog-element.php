@@ -5,14 +5,12 @@ $APPLICATION->SetPageProperty('title', 'Блог');
 
 $bxApp = \Bitrix\Main\Application::getInstance();
 $request = $bxApp->getContext()->getRequest();
-$SectionCode = $request->get('SectionCode');
 $ElementCode = $request->get('ElementCode');
 
 $dctFilter = [
         'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('blog'),
         'ACTIVE' => 'Y',
         'ACTIVE_DATE' => 'Y',
-        'SECTION_CODE' => $SectionCode,
         'CODE' => $ElementCode
     ];
 

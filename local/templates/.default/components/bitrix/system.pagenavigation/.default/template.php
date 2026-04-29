@@ -25,51 +25,51 @@ $BASE_URL = $arResult["sUrlPath"].'?'.$strNavQueryString.'PAGEN_'.$arResult["Nav
 ?>
 
 
-<div class="catalog__pagination pagination">
-    <ul class="pagination__list">
-        <?if ($arResult["nStartPage"]!=1):?>
-        <li>
-            <a href="<?=$BASE_URL?>1" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==1):?>active<?endif?>">1</a>
-        </li>
 
-        <?if ($arResult["nStartPage"] > 3):?>
+<ul class="pagination__list">
+    <?if ($arResult["nStartPage"]!=1):?>
+    <li>
+        <a href="<?=$BASE_URL?>1" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==1):?>active<?endif?>">1</a>
+    </li>
+
+    <?if ($arResult["nStartPage"] > 3):?>
+    <li>
+        <a href="<?=$BASE_URL?><?=round($arResult["nStartPage"]/2)?>" class="pagination__item pagination__item--glasses text-16">...</a>
+    </li>
+    <?elseif ($arResult["nStartPage"] == 3):?>
+    <li>
+        <a href="<?=$BASE_URL?>2" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==2):?>active<?endif?>">2</a>
+    </li>
+    <?endif?>
+    <?endif?>
+
+
+
+
+    <?$NavPage=$arResult["nStartPage"]; while($NavPage <= $arResult["nEndPage"]):?>
+    <li>
+        <a href="<?=$BASE_URL?><?=$NavPage?>" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==$NavPage):?>active<?endif?>"><?=$NavPage?></a>
+    </li>
+    <?$NavPage++?>
+    <?endwhile?>
+
+
+    <?if ($arResult["nEndPage"]!=$arResult["NavPageCount"]):?>
+
+        <?if ($arResult["nEndPage"] < $arResult["NavPageCount"]-2):?>
         <li>
-            <a href="<?=$BASE_URL?><?=round($arResult["nStartPage"]/2)?>" class="pagination__item pagination__item--glasses text-16">...</a>
+            <a href="<?=$BASE_URL?><?=round(($arResult["nEndPage"]+$arResult["NavPageCount"])/2)?>" class="pagination__item pagination__item--glasses text-16">...</a>
         </li>
-        <?elseif ($arResult["nStartPage"] == 3):?>
+        <?elseif ($arResult["nEndPage"] == $arResult["NavPageCount"]-2):?>
         <li>
-            <a href="<?=$BASE_URL?>2" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==2):?>active<?endif?>">2</a>
+            <a href="<?=$BASE_URL?><?=($arResult["NavPageCount"]-1)?>" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==($arResult["NavPageCount"]-1)):?>active<?endif?>"><?=($arResult["NavPageCount"]-1)?></a>
         </li>
         <?endif?>
-        <?endif?>
 
 
-
-
-        <?$NavPage=$arResult["nStartPage"]; while($NavPage <= $arResult["nEndPage"]):?>
         <li>
-            <a href="<?=$BASE_URL?><?=$NavPage?>" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==$NavPage):?>active<?endif?>"><?=$NavPage?></a>
+            <a href="<?=$BASE_URL?><?=$arResult['NavPageCount']?>" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==$arResult['NavPageCount']):?>active<?endif?>"><?=$arResult['NavPageCount']?></a>
         </li>
-        <?$NavPage++?>
-        <?endwhile?>
+    <?endif?>
+</ul>
 
-
-        <?if ($arResult["nEndPage"]!=$arResult["NavPageCount"]):?>
-
-            <?if ($arResult["nEndPage"] < $arResult["NavPageCount"]-2):?>
-            <li>
-                <a href="<?=$BASE_URL?><?=round(($arResult["nEndPage"]+$arResult["NavPageCount"])/2)?>" class="pagination__item pagination__item--glasses text-16">...</a>
-            </li>
-            <?elseif ($arResult["nEndPage"] == $arResult["NavPageCount"]-2):?>
-            <li>
-                <a href="<?=$BASE_URL?><?=($arResult["NavPageCount"]-1)?>" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==($arResult["NavPageCount"]-1)):?>active<?endif?>"><?=($arResult["NavPageCount"]-1)?></a>
-            </li>
-            <?endif?>
-
-
-            <li>
-                <a href="<?=$BASE_URL?><?=$arResult['NavPageCount']?>" class="pagination__item text-16 <?if($arResult["NavPageNomer"]==$arResult['NavPageCount']):?>active<?endif?>"><?=$arResult['NavPageCount']?></a>
-            </li>
-        <?endif?>
-    </ul>
-</div>

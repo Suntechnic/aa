@@ -62,7 +62,9 @@ else:?>
                         style='--icon:url("../img/icons/01.svg")'
                         data-more-btn
                     >Показать ещё</a>
-                <?=$arResult['NAV_STRING']?>
+                <div class="catalog__pagination pagination">
+                    <?=$arResult['NAV_STRING']?>
+                </div>
             </div>
         </div>
     </div>
