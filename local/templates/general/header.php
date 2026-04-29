@@ -24,7 +24,7 @@ $router = $bxApp->getRouter();
             </div>
             <ul class="menu__pages" data-da=".menu__bottom, 992, 0">
                 <li class="menu__page">
-                    <a href="javascript:void(0)" class="menu__page-link text-16">Обо мне</a>
+                    <a href="<?=$router->route('about');?>" class="menu__page-link text-16">Обо мне</a>
                 </li>
                 <li class="menu__page">
                     <a href="<?=$router->route('works');?>" class="menu__page-link text-16">Мои работы</a>
@@ -33,7 +33,7 @@ $router = $bxApp->getRouter();
                     <a href="<?=$router->route('blog');?>" class="menu__page-link text-16">Блог</a>
                 </li>
                 <li class="menu__page">
-                    <a href="javascript:void(0)" class="menu__page-link text-16">Контакты</a>
+                    <a href="<?=$router->route('contacts');?>" class="menu__page-link text-16">Контакты</a>
                 </li>
             </ul>
             <a href="javascript:void(0)" class="menu__callback" style='--icon:url(&quot;img/icons/02.svg&quot;)'></a>

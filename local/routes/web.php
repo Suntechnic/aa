@@ -3,6 +3,9 @@ use Bitrix\Main\Routing\RoutingConfigurator;
 use Bitrix\Main\Routing\Controllers\PublicPageController;
 return function (RoutingConfigurator $routes)
 {
+    // обо мне
+    $routes->name('about')
+            ->get('/about/', new PublicPageController('/local/pages/about.php'));
     $routes->name('works')
             ->get('/works/', new PublicPageController('/local/pages/gallery-sections.php'));
     // галерея
@@ -23,4 +26,7 @@ return function (RoutingConfigurator $routes)
             $routes->name('blog-element')
                     ->get('{ElementCode}/', new PublicPageController('/local/pages/blog-element.php'));
         });
+    // контакты
+    $routes->name('contacts')
+            ->get('/contacts/', new PublicPageController('/local/pages/contacts.php'));
 };

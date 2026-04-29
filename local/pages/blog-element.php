@@ -1,5 +1,9 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+/**
+ * @var CMain $APPLICATION
+ */
+
 $APPLICATION->SetTitle('Блог');
 $APPLICATION->SetPageProperty('title', 'Блог');
 
@@ -16,9 +20,12 @@ $dctFilter = [
 
 $lstSelect = [
         'NAME',
+        'TIMESTAMP_X',
+        'ACTIVE_FROM',
         'DETAIL_PAGE_URL',
         'DETAIL_TEXT',
-        'IBLOCK_SECTION_ID'
+        'DETAIL_PICTURE',
+        'PROPERTY_TAGS',
     ];
 $lstProps = \Bitrix\Iblock\PropertyTable::getList([
         'select' => [

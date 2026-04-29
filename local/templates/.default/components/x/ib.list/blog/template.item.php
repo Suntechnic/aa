@@ -1,4 +1,8 @@
-
+<?
+/**
+ * @var array $dctItem
+ */
+?>
 <a href="<?=$dctItem['DETAIL_PAGE_URL']?>" class="tabs__card card-exhibition">
     <div class="card-exhibition__img">
         <picture>
@@ -10,9 +14,9 @@
     <address class="card-exhibition__address text-16">
         <?=$dctItem['PREVIEW_TEXT']?>
     </address>
+    <?foreach($dctItem['PROPERTY_TAGS_VALUE'] as $dctItemTag):?>
     <div class="card-exhibition__tag text-16">
-        <?foreach($dctItem['PROPERTY_TAGS_VALUE'] as $dctItemTag):?>
-            #<?=$dctItemTag?>
-        <?endforeach;?>
+        #<?=$dctItemTag?>
     </div>
+    <?endforeach;?>
 </a>
