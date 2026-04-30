@@ -17,7 +17,7 @@ $lstItems = $arResult['ITEMS'];
 <section class="exhibition section animate-block">
     <div class="exhibition__container">
         <div class="exhibition__inner">
-            <h2 class="exhibition__title text-50 fade-up" data-watch data-watch-once>Другие статьи</h2>
+            <h2 class="exhibition__title text-50 fade-up" data-watch data-watch-once><?=$arParams['TEMPLATE_VARS']['TITLE']?></h2>
             <div class="exhibition__slider swiper js-slider-exhibition fade-up" data-watch data-watch-once>
                 <div class="exhibition__swiper swiper-wrapper">
                     <?foreach($arResult['ITEMS'] as $dctItem):?>

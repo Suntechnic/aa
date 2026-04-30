@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 <section class="working section animate-block">
     <div class="working__container">
         <div class="working__inner working__inner--two">
-            <h2 class="working__title text-50 fade-up" data-watch data-watch-once>Другие работы</h2>
+            <h2 class="working__title text-50 fade-up" data-watch data-watch-once><?=$arParams['TEMPLATE_VARS']['TITLE']?></h2>
             <div class="working__slider swiper js-slider-working fade-up" data-watch data-watch-once>
                 <div class="working__swiper swiper-wrapper">
                     <?foreach($arResult['ITEMS'] as $dctItem): $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];?>

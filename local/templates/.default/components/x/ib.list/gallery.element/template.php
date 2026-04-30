@@ -143,20 +143,14 @@ $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
                 'CACHE_FILTER' => 'Y',
                 'CACHE_GROUPS' => 'Y',
                 
-                
-                'PAGER' => [
-                        'TITLE' => '',
-                        'TEMPLATE' => '',
-                        'SHOW_ALWAYS' => 'N',
-                        'SHOW_ALL' => 'N',
-                        'PAGE' => 1,
-                    ],
-                
-                
                 'AJAX_OPTION_SHADOW' => 'Y',
                 'AJAX_OPTION_JUMP' => 'N',
                 'AJAX_OPTION_STYLE' => 'Y',
                 'AJAX_OPTION_HISTORY' => 'N',
-                'AJAX_OPTION_ADDITIONAL' => ''
+                'AJAX_OPTION_ADDITIONAL' => '',
+
+                'TEMPLATE_VARS' => [
+                        'TITLE' => 'Другие работы',
+                ]
             )
     );?>
