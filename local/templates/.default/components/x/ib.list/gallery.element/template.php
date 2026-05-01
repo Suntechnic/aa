@@ -10,11 +10,11 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+
 $this->setFrameMode(true);
 
 $dctItem = $arResult['ITEM'];
 $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
-\Kint::dump($arResult, $arParams);
 ?>
 <section class="product section animate-block">
     <div class='product__container'>
@@ -52,13 +52,13 @@ $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
                     <div class="product__slider swiper js-slider-product">
                         <div class="product__swiper swiper-wrapper">
                             <?foreach($dctItem['PROPERTY_PHOTOS_FILES'] as $dctPhotoFile):?>
-                            <div class="product__slide swiper-slide">
+                            <a href="<?=$dctPhotoFile['SRC']?>" data-fslightbox="gallery_<?=$dctItem['ID']?>"  class="product__slide swiper-slide">
                                 <div class="product__slide-img">
                                     <picture>
                                         <img src="<?=$dctPhotoFile['SRC']?>" srcset="<?=$dctPhotoFile['SRC']?> 2x" alt="">
                                     </picture>
                                 </div>
-                            </div>
+                            </a>
                             <?endforeach;?>
                         </div>
                     </div>

@@ -1,3 +1,8 @@
+<?
+/**
+ * @var CMain $APPLICATION
+ */
+?>
 <meta http-equiv="Content-Type" content="text/html; charset="<?=LANG_CHARSET?>">
 <title><?$APPLICATION->ShowTitle()?></title>
 
@@ -105,7 +110,7 @@ $assets = \Bitrix\Main\Page\Asset::getInstance();
     ]);
 
 $assets->addCss('/local/assets/dist/css/main.css');
-$assets->addString('<script type="module" crossorigin src="/local/assets/dist/js/main.BYgYxPm4.js"></script>');
+$assets->addString('<script type="module" crossorigin src="/local/assets/dist/js/main.D9yDz4nx.js"></script>');
 
 
 $APPLICATION->ShowHead();

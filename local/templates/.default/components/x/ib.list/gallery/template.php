@@ -103,11 +103,15 @@ else:?>
                                             document.querySelector('#'+BX.App.Components.<?=$arParamsClined['UID']?>.idContainer+' [data-more-btn]').remove();
                                         }
 
-                                        BX.onCustomEvent('app.DOMUpdated', [
-                                            {
-                                                container: listContainer
-                                            }
-                                        ]);
+                                        if (typeof window.initSliders === 'function') {
+                                            window.initSliders();
+                                        }
+
+                                        // BX.onCustomEvent('app.DOMUpdated', [
+                                        //     {
+                                        //         container: listContainer
+                                        //     }
+                                        // ]);
                                     }
                                 );
                             return;

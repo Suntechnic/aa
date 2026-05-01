@@ -10,6 +10,7 @@
 $this->setFrameMode(true);
 
 $dctItem = $arResult['ITEM'];
+
 $bxApp = \Bitrix\Main\Application::getInstance();
 $router = $bxApp->getRouter();
 ?>

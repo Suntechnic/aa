@@ -19,11 +19,46 @@ import { flsModules } from './modules.js';
 
 //========================================================================================================================================================
 
-export default async () => {
-  const el = document.querySelector('[data-fslightbox]');
-  if (!el) return;
-  await import(/* webpackChunkName: "fslightbox" */ 'fslightbox');
-  window.FsLightbox();
+// export default async () => {
+//   const el = document.querySelector('[data-fslightbox]');
+//   if (!el) return;
+//   await import(/* webpackChunkName: "fslightbox" */ 'fslightbox');
+//   window.FsLightbox();
+// };
+
+//========================================================================================================================================================
+let fsLightboxLoaded = false;
+
+const initFsLightbox = async (container = document) => {
+  const items = container.querySelectorAll(
+    '[data-fslightbox]:not([data-fslightbox-init])',
+  );
+
+  if (!items.length) return;
+
+  if (!fsLightboxLoaded) {
+    await import(/* webpackChunkName: "fslightbox" */ 'fslightbox');
+    fsLightboxLoaded = true;
+  }
+
+  items.forEach((el) => {
+    el.setAttribute('data-fslightbox-init', 'true');
+  });
+
+  window.refreshFsLightbox();
+};
+
+export default () => {
+  initFsLightbox();
+
+  if (window.BX) {
+    BX.addCustomEvent('app.DOMUpdated', function (data) {
+      const container = data?.container;
+      if (!container) return;
+
+      initFsLightbox(container);
+    });
+  }
 };
 
 //========================================================================================================================================================
