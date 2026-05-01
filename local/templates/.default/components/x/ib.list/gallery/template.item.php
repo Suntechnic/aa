@@ -1,15 +1,21 @@
+<?
+/**
+ * @var array $dctItem
+ * @var array $dctSection
+ */
+?>
 <div class="card-working__slider swiper js-slider-card">
-    <div class="card-working__swiper swiper-wrapper">
+    <a href="<?=$dctItem['DETAIL_PAGE_URL']?>" class="card-working__swiper swiper-wrapper">
         <?foreach($dctItem['PROPERTY_PHOTOS_FILES'] as $dctPhotoFile):?>
-        <a href="<?=$dctPhotoFile['SRC']?>" class="card-working__slide swiper-slide">
+        <span href="<?=$dctPhotoFile['SRC']?>" class="card-working__slide swiper-slide">
             <div class="card-working__img">
                 <picture>
                     <img src="<?=$dctPhotoFile['SRC']?>" alt="">
                 </picture>
             </div>
-        </a>
+        </span>
         <?endforeach;?>
-    </div>
+    </a>
     <div class="card-working__pagination"></div>
 </div>
 <div class="card-working__content">

@@ -32,7 +32,7 @@ $router = $bxApp->getRouter();
             <h2 class="block__title text-50"><?=$dctItem['NAME']?></h2>
             <time datetime="2016-11-18T09:54" class="block__time text-16"><?=$dctItem['X_DATE_FORMATED']?></time>
             <?if($dctItem['DETAIL_PICTURE']):?>
-                <div class="block__main-img">
+                <div class="block__img">
                     <picture>
                         <img src="<?=$dctItem['DETAIL_PICTURE']['SRC']?>" alt="<?=$dctItem['NAME']?>">
                     </picture>
