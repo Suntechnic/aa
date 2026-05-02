@@ -1,8 +1,24 @@
 <?
+/**
+ * @var array $arResult
+ */
+
 $lstSectionsIds = [];
 foreach ($arResult['ITEMS'] as $i=>$dctItem) {
     \Bxx\Helpers\IBlocks\Elements\Modifiers::illustrator($arResult['ITEMS'][$i],['GALLERY'=>['PHOTOS'],'MAIN'=>'PICTURE']);
 
+    // апсайз картинки для секции
+     if ($arResult['ITEMS'][$i]['PROPERTY_PHOTOS_VALUE']) {
+        foreach ($arResult['ITEMS'][$i]['PROPERTY_PHOTOS_VALUE'] as $iPhoto=>$PhotoId) {
+            $arResult['ITEMS'][$i]['PROPERTY_PHOTOS_FILES_PREVIEW'][$iPhoto] = \CFile::resizeImageGet(
+                    $PhotoId,
+                    ['width' => 355, 'height' => 355],
+                    BX_RESIZE_IMAGE_PROPORTIONAL,
+                    true
+                );
+            $arResult['ITEMS'][$i]['PROPERTY_PHOTOS_FILES_PREVIEW'][$iPhoto]['SRC'] = $arResult['ITEMS'][$i]['PROPERTY_PHOTOS_FILES_PREVIEW'][$iPhoto]['src'];
+        } 
+    }
     $lstSectionsIds[] = $dctItem['IBLOCK_SECTION_ID'];
 }
 
@@ -22,6 +38,7 @@ $rdbSection = \CIBlockSection::GetList(
         $lstSelect = ['ID', 'NAME', 'SECTION_PAGE_URL'],
         false
     );
+$refSections = [];
 while($dctSection = $rdbSection->getNext()) {
     $refSections[$dctSection['ID']] = $dctSection;
 }
@@ -33,3 +50,10 @@ if ($arResult['FILTER']['SECTION_CODE']) {
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SEO
+if ($arResult['SECTION']['ID']) {
+    $ipropSectionValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arResult['SECTION']['IBLOCK_ID'], $arResult['SECTION']['ID']);
+    $arResult['SECTION']['SEO'] = $ipropSectionValues->getValues();
+    $this->__component->setResultCacheKeys(['SECTION']);
+}

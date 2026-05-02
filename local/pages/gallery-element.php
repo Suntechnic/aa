@@ -23,7 +23,8 @@ $lstSelect = [
         'NAME',
         'DETAIL_PAGE_URL',
         'DETAIL_TEXT',
-        'IBLOCK_SECTION_ID'
+        'IBLOCK_SECTION_ID',
+        'TIMESTAMP_X',
     ];
 $lstProps = \Bitrix\Iblock\PropertyTable::getList([
         'select' => [

@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 $lstItems = $arResult['ITEMS'];
-\Kint::dump($lstItems);
 ?>
 <section class="exhibition section animate-block">
     <div class="exhibition__container">

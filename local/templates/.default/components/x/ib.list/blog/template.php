@@ -60,6 +60,7 @@ else:?>
                     </div>
                 </div>
             </div>
+            <?if ($arResult['NAV_STRING']):?>
             <div class="blog__bottom fade-up" data-watch data-watch-once>
                 <a
                         href="javascript:void(0)"
@@ -72,6 +73,7 @@ else:?>
                     <?=$arResult['NAV_STRING']?>
                 </div>
             </div>
+            <?endif?>
         </div>
     </div>
 </section>

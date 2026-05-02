@@ -1,9 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 /** @var array $arParams */
 /** @var array $arResult */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
+/** @var CMain $APPLICATION */
+/** @var CUser $USER */
+/** @var CDatabase $DB */
 /** @var CBitrixComponentTemplate $this */
 /** @var string $templateName */
 /** @var string $templateFile */
@@ -54,6 +54,7 @@ else:?>
             <div class="catalog__row fade-up" data-watch data-watch-once data-list>
                 <?include('template.list.php');?>
             </div>
+            <?if($arResult['NAV_STRING']):?>
             <div class="catalog__bottom fade-up" data-watch data-watch-once>
                 <a 
                         href="javascript:void(0)" 
@@ -66,6 +67,7 @@ else:?>
                     <?=$arResult['NAV_STRING']?>
                 </div>
             </div>
+            <?endif?>
         </div>
     </div>
 </section>

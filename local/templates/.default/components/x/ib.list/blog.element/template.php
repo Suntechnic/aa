@@ -32,7 +32,7 @@ $router = $bxApp->getRouter();
             </div>
             <h2 class="block__title text-50"><?=$dctItem['NAME']?></h2>
             <time datetime="2016-11-18T09:54" class="block__time text-16"><?=$dctItem['X_DATE_FORMATED']?></time>
-            <?if($dctItem['DETAIL_PICTURE']):?>
+            <?if($dctItem['DETAIL_PICTURE']): \kint::dump($dctItem['DETAIL_PICTURE']);?>
                 <div class="block__img">
                     <picture>
                         <img src="<?=$dctItem['DETAIL_PICTURE']['SRC']?>" alt="<?=$dctItem['NAME']?>">
@@ -61,8 +61,8 @@ $router = $bxApp->getRouter();
 
                     <div class="block__pagination"></div>
                     <div class="block__arrows swiper-arrows">
-                        <button type="button" class="block__arrow block__arrow--prev swiper-arrow" style='--icon:url(&quot;img/icons/prev.svg&quot;)'></button>
-                        <button type="button" class="block__arrow block__arrow--next swiper-arrow" style='--icon:url(&quot;img/icons/next.svg&quot;)'></button>
+                        <button type="button" class="block__arrow block__arrow--prev swiper-arrow" style='--icon:url(../img/icons/prev.svg)'></button>
+                        <button type="button" class="block__arrow block__arrow--next swiper-arrow" style='--icon:url(../img/icons/next.svg)'></button>
                     </div>
                 </div>
             </div>

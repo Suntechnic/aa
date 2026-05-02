@@ -8,7 +8,11 @@
 $bxApp = \Bitrix\Main\Application::getInstance();
 $router = $bxApp->getRouter();
 
-//$APPLICATION->ShowPanel();
+$APPLICATION->ShowPanel();
+
+$bxApp = \Bitrix\Main\Application::getInstance();
+$request = $bxApp->getContext()->getRequest();
+$SectionCode = $request->get('SectionCode');
 ?>
 <header class="header">
     <div class="header__menu menu">
@@ -20,7 +24,7 @@ $router = $bxApp->getRouter();
                 <a href="/" class="menu__logo">
                     <img src="/local/assets/dist/img/header/01.svg" alt="">
                 </a>
-                <a href="<?=$router->route('gallery');?>" class="menu__gallery text-16">Галерея работа</a>
+               <!-- <a href="<?=$router->route('gallery');?>" class="menu__gallery text-16">Галерея работа</a>-->
             </div>
             <ul class="menu__pages" data-da=".menu__bottom, 992, 0">
                 <li class="menu__page">
@@ -65,6 +69,10 @@ $router = $bxApp->getRouter();
                             'CACHE_TIME' => 3600,
                             'CACHE_FILTER' => 'Y',
                             'CACHE_GROUPS' => 'Y',
+                            'TEMPLATE_VARS' => [
+                                    'SECTION_CODE' => $SectionCode,
+                                ],
+
                         )
                 );?>
         </div>
