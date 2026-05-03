@@ -38,12 +38,7 @@ menuInit();
 // import { spollers } from './files/functions.js';
 // spollers();
 
-/*
-Модуль "Табы"
-Сниппет (HTML): tabs
-*/
-import { tabs } from './files/functions.js';
-tabs();
+
 
 /*
 Модуль "Показать еще"

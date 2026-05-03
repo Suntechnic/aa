@@ -3,6 +3,9 @@
  * @var array $dctItem
  * @var array $dctSection
  */
+if (count($dctItem['PROPERTY_PHOTOS_FILES_PREVIEW']) == 1) {
+    $dctItem['PROPERTY_PHOTOS_FILES_PREVIEW'][] = $dctItem['PROPERTY_PHOTOS_FILES_PREVIEW'][0];
+}
 ?>
 <div class="card-working__slider swiper js-slider-card">
     <a href="<?=$dctItem['DETAIL_PAGE_URL']?>" class="card-working__swiper swiper-wrapper">

@@ -111,7 +111,7 @@ $assets = \Bitrix\Main\Page\Asset::getInstance();
 
 $assets->addCss('/local/assets/dist/css/main.css');
 $assets->addCss('/local/assets/dist/css/fix.css');
-$assets->addString('<script type="module" crossorigin src="/local/assets/dist/js/main.D9yDz4nx.js"></script>');
+$assets->addString('<script type="module" crossorigin src="/local/assets/dist/js/main.CojC5TiB.js"></script>');
 
 
 $APPLICATION->ShowHead();
