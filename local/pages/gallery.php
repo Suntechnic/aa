@@ -4,7 +4,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
  * @var CMain $APPLICATION
  */
 
-$APPLICATION->SetTitle('Галерея');
+$APPLICATION->SetTitle("Галерея");
 $APPLICATION->SetPageProperty('title', 'Галерея');
 
 $bxApp = \Bitrix\Main\Application::getInstance();
@@ -28,7 +28,7 @@ $Page = $request->get('PAGEN_1') ?: 1;
         'gallery',
         Array(
                 'AJAX_MODE' => 'N',
-                'ELEMENTS_COUNT' => 4,
+                'ELEMENTS_COUNT' => 32,
                 'SORT' => ['SORT'=>'ASC'],
                 
                 'FILTER' => $dctFilter,

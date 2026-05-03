@@ -12,8 +12,8 @@ foreach ($arResult['ITEMS'] as $i=>$dctItem) {
         foreach ($arResult['ITEMS'][$i]['PROPERTY_PHOTOS_VALUE'] as $iPhoto=>$PhotoId) {
             $arResult['ITEMS'][$i]['PROPERTY_PHOTOS_FILES_PREVIEW'][$iPhoto] = \CFile::resizeImageGet(
                     $PhotoId,
-                    ['width' => 355, 'height' => 355],
-                    BX_RESIZE_IMAGE_PROPORTIONAL,
+                    ['width' => 900, 'height' => 900],
+                    BX_RESIZE_IMAGE_EXACT,
                     true
                 );
             $arResult['ITEMS'][$i]['PROPERTY_PHOTOS_FILES_PREVIEW'][$iPhoto]['SRC'] = $arResult['ITEMS'][$i]['PROPERTY_PHOTOS_FILES_PREVIEW'][$iPhoto]['src'];

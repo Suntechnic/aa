@@ -7,13 +7,11 @@
 <div class="card-working__slider swiper js-slider-card">
     <a href="<?=$dctItem['DETAIL_PAGE_URL']?>" class="card-working__swiper swiper-wrapper">
         <?foreach($dctItem['PROPERTY_PHOTOS_FILES_PREVIEW'] as $dctPhotoFile):?>
-        <span href="<?=$dctPhotoFile['SRC']?>" class="card-working__slide swiper-slide">
+        <span data-href="<?=$dctPhotoFile['SRC']?>" class="card-working__slide swiper-slide">
             <div class="card-working__img">
                 <picture>
                     <img 
                             src="<?=$dctPhotoFile['SRC']?>" 
-                            width="<?=$dctPhotoFile['WIDTH']?>"
-                            height="<?=$dctPhotoFile['HEIGHT']?>"
                             alt=""
                         >
                 </picture>
