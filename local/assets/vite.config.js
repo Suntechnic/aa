@@ -10,9 +10,12 @@ export default {
 
   // 🔴 КЛЮЧЕВОЙ ФИКС
   experimental: {
-    renderBuiltUrl(filename) {
-      return filename.replace(/^\//, '');
-    },
+  renderBuiltUrl(filename, { hostType }) {
+    if (hostType === 'css') {
+      return { relative: true };
+    }
+    return filename.replace(/^\//, '');
+  },
   },
 
   plugins: [
