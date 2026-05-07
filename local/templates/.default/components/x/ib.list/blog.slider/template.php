@@ -20,7 +20,9 @@ $lstItems = $arResult['ITEMS'];
             <div class="exhibition__slider swiper js-slider-exhibition fade-up" data-watch data-watch-once>
                 <div class="exhibition__swiper swiper-wrapper">
                     <?foreach($arResult['ITEMS'] as $dctItem):?>
-                    <?include(__DIR__.'/../blog/template.item.php');?>
+                    <a href="<?=$dctItem['DETAIL_PAGE_URL']?>" class="exhibition__card card-exhibition swiper-slide">
+                        <?include(__DIR__.'/../blog/template.item.php');?>
+                    </a>
                     <?endforeach?>
                 </div>
                 <div class="exhibition__pagination"></div>

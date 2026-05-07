@@ -108,7 +108,7 @@ $router = $bxApp->getRouter();
                 'AJAX_OPTION_ADDITIONAL' => '',
 
                 'TEMPLATE_VARS' => [
-                        'TITLE' => 'Другие статьи',
+                    'TITLE' => 'Другие статьи',
                 ]
             )
     );?>

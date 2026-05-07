@@ -1,6 +1,8 @@
 <?foreach($arResult['ITEMS'] as $dctItem): $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];?>
 <div class="catalog__column card-working">
-    <?include('template.item.php');?>
+    <a href="<?=$dctItem['DETAIL_PAGE_URL']?>" class="tabs__card card-exhibition">
+        <?include('template.item.php');?>
+    </a>
 </div>
 <?endforeach?>
 <?if($signedParamsMutation):?>
