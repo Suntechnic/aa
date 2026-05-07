@@ -40,3 +40,5 @@ if (!defined('APPLICATION_ENV') || APPLICATION_ENV != 'dev') { // если не 
 // установка пути к шаблону по умолчанию
 $DefaultTemplatePath = \Bitrix\Main\Application::getDocumentRoot().'/local/templates/.default';
 define('DEFAULT_TEMPLATE_PATH',$DefaultTemplatePath);
+
+\Bitrix\Main\Loader::includeModule('iblock');
