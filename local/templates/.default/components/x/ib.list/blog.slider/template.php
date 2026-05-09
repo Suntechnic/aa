@@ -12,6 +12,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 $lstItems = $arResult['ITEMS'];
+if (empty($lstItems)) {
+    return;
+}
 ?>
 <section class="exhibition section animate-block">
     <div class="exhibition__container">
