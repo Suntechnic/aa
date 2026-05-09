@@ -1,3 +1,9 @@
 .menu__item._item-active {
     color: var(--color-alt);
 }
+
+@media (max-width: 767.98px) {
+    .card-working__category {
+        display: none;
+    }
+}

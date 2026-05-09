@@ -17,7 +17,7 @@ $phone = \Bitrix\Main\PhoneNumber\Parser::getInstance()->parse($ss->getStringVal
         <div class="contact__inner">
             <h2 class="contact__title text-50 fade-up" data-watch data-watch-once>Контакты</h2>
             <div class="contact__info fade-up" data-watch data-watch-once>
-                <a href="tel:<?=$phone->getRawNumber(\Bitrix\Main\PhoneNumber\Format::E164);?>" class="contact__link text-70"><?=$phone->getRawNumber();?></a>
+                <a href="tel:<?=$phone->getRawNumber(\Bitrix\Main\PhoneNumber\Format::E164);?>" class="contact__link text-22"><?=$phone->getRawNumber();?></a>
                 <a href="mailto:<?=htmlspecialchars($ss->getStringVal('email'))?>" class="contact__link text-22"><?=htmlspecialchars($ss->getStringVal('email'))?></a>
             </div>
             <div class="contact__content fade-up" data-watch data-watch-once>
