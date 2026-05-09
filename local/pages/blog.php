@@ -34,6 +34,7 @@ $Page = $request->get('PAGEN_1') ?: 1;
                         'NAME',
                         'DETAIL_PAGE_URL',
                         'DATE_ACTIVE_FROM','ACTIVE_FROM_X','ACTIVE_FROM','TIMESTAMP_X',
+                        'PROPERTY_DATE_STARTING', 'PROPERTY_DATE_ENDING', 
                         'PREVIEW_TEXT',
                         'PROPERTY_TAGS', 
                         'PREVIEW_PICTURE',  
