@@ -31,7 +31,22 @@ $router = $bxApp->getRouter();
                 </ul>
             </div>
             <h2 class="block__title text-50"><?=$dctItem['NAME']?></h2>
-            <time datetime="2016-11-18T09:54" class="block__time text-16"><?=$dctItem['X_DATE_FORMATED']?></time>
+            
+            <?if (!empty($dctItem['PROPERTY_DATE_STARTING_VALUE'])): 
+
+            $datetime = new \Bitrix\Main\Type\DateTime($dctItem['PROPERTY_DATE_STARTING_VALUE']);
+            $culture = \Bitrix\Main\Application::getInstance()->getContext()->getCulture();
+            $LongDateFormat = $culture->getLongDateFormat();?>
+
+            <div class="block__time text-16"><?=FormatDate($LongDateFormat, $datetime->getTimestamp());?>
+                <?if (!empty($dctItem['PROPERTY_DATE_ENDING_VALUE'])): 
+                $datetime = new \Bitrix\Main\Type\DateTime($dctItem['PROPERTY_DATE_ENDING_VALUE']);
+                ?>
+                — <?=FormatDate($LongDateFormat, $datetime->getTimestamp());?>
+                <?endif;?>
+            </div>
+            <?endif;?>
+
             <?if($dctItem['DETAIL_PICTURE']):?>
                 <div class="block__img">
                     <picture>
