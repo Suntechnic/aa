@@ -1,5 +1,9 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+/**
+ * @var CMain $APPLICATION
+ */
+
 $APPLICATION->SetTitle('Главная');
 $APPLICATION->SetPageProperty('main_class','page');
 
@@ -49,12 +53,13 @@ $APPLICATION->SetPageProperty('main_class','page');
         Array(
                 'AJAX_MODE' => 'N',
                 'ELEMENTS_COUNT' => 8,
-                'SORT' => ['ID'=>'DESC'],
+                'SORT' => ['SORT'=>'ASC'],
                 
                 'FILTER' => [
                         'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),
                         'ACTIVE' => 'Y',
-                        'ACTIVE_DATE' => 'Y'
+                        'ACTIVE_DATE' => 'Y',
+                        'PROPERTY_NEW_VALUE' => 'Y',
                     ],
                 'SELECT' => [
                         'NAME',
