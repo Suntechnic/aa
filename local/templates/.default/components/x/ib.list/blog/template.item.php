@@ -30,9 +30,9 @@ $LongDateFormat = $culture->getLongDateFormat();?>
     <?=$dctItem['PREVIEW_TEXT']?>
 </address>
 
-<?foreach($dctItem['PROPERTY_TAGS_VALUE'] as $dctItemTag):?>
+<?/*foreach($dctItem['PROPERTY_TAGS_VALUE'] as $dctItemTag):?>
 <div class="card-exhibition__tag text-16">
     #<?=$dctItemTag?>
 </div>
-<?endforeach;?>
+<?endforeach;*/?>
 
