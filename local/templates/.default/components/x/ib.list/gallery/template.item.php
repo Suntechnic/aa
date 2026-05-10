@@ -25,6 +25,8 @@ if (count($dctItem['PROPERTY_PHOTOS_FILES_PREVIEW']) == 1) {
     <div class="card-working__pagination"></div>
 </div>
 <div class="card-working__content">
+    <?/*
     <a href="<?=$dctSection['SECTION_PAGE_URL']?>" class="card-working__category text-14"><?=$dctSection['NAME']?></a>
+    */?>
     <a href="<?=$dctItem['DETAIL_PAGE_URL']?>" class="card-working__title text-18"><?=$dctItem['NAME']?></a>
 </div>
