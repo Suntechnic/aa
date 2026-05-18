@@ -373,15 +373,20 @@
     }
   }
 
-  &.priority-nav-is-hidden {
-    // opacity: 0;
-    // pointer-events: none;
+    &.priority-nav-is-hidden {
+      display: none;
+    }
   }
-}
 
-.priority-nav__wrapper {
-  margin-left: auto;
-}
+  .js-nav:not(.priority-nav-has-dropdown) {
+    .priority-nav__wrapper {
+      display: none;
+    }
+  }
+
+  .priority-nav__wrapper {
+    margin-left: auto;
+  }
 
 .menu-open {
   .menu__bottom {
