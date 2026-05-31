@@ -3,7 +3,6 @@
 @layer component {
   .intro {
     position: relative;
-    padding-top: var(--header);
 
     @include mq($tablet) {
       height: 100dvh;
@@ -12,7 +11,7 @@
     // .intro__slider
 
     &__slider {
-      position: static;
+      position: relative;
     }
 
     // .intro__swiper
@@ -31,6 +30,37 @@
       @include mq($s) {
         height: 490px;
       }
+
+      
+      &-content {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: var(--white);
+        max-width: 900px;
+        width: 100%;
+      }
+
+      &-title {
+          font-size: 1.5rem;
+          line-height: 1.2;
+          margin-bottom: 10px;
+
+          @include mq($tablet) {
+            font-size: 3.75vw;
+          }
+        }
+
+        &-text {
+          font-size: 1rem;
+          line-height: 1.2;
+
+          @include mq($tablet) {
+            font-size: 1.25vw;
+          }
+        }
     }
 
     // .intro__slide-img

@@ -8,10 +8,10 @@ $phone = \Bitrix\Main\PhoneNumber\Parser::getInstance()->parse($ss->getStringVal
         <div class="footer__inner">
             <div class="footer__info">
                 <a href="javascript:void(0)" class="footer__logo">
-                    <img src="/local/assets/dist/img/footer/01.svg" alt="">
+                    <img src="/local/new_file/logo_footer.svg" alt="">
                 </a>
                 <div class="footer__items">
-                    <div class="footer__item text-14">© <?=date('Y')?> Галерея работ Андрея Аввакумова. Все права защищены.</div>
+                    <div class="footer__item text-14">© <?=date('Y')?> serb.su. Все права защищены.</div>
                     <a href="javascript:void(0)" class="footer__item text-14">Политика конфиденциальности</a>
                 </div>
             </div>

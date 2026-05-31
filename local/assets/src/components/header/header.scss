@@ -3,12 +3,16 @@
 //========================================================================================================================================================
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 5;
   // .header__container
+
+  @media (max-width: $tablet) {
+    height: 87px;
+  }
 
   &__container {
   }
@@ -67,14 +71,13 @@
   // .menu__logo
 
   &__logo {
-    width: 210px;
-    flex: 0 0 210px;
-    height: 26px;
+    width: 250px;
+    flex: 0 0 250px;
 
     @include mq($tablet) {
-      width: 21.82vw;
-      flex: 0 0 21.82vw;
-      height: 2.6vw;
+      width: 30.55vw;
+      flex: 0 0 30.55vw;
+      height: 3.64vw;
     }
     img,
     picture {
@@ -249,6 +252,7 @@
   display: block;
   width: 20px;
   height: 18px;
+  flex: 0 0 auto;
 
   @media (any-hover: none) {
     cursor: default;

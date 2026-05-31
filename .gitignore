@@ -2,6 +2,7 @@
 /_tools
 /_test
 /_devzone
+node_modules
 
 #IDE
 .idea/

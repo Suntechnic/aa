@@ -111,7 +111,9 @@ $assets = \Bitrix\Main\Page\Asset::getInstance();
 
 $assets->addCss('/local/assets/dist/css/main.css');
 $assets->addCss('/local/templates/.default/fix.css');
-$assets->addString('<script type="module" crossorigin src="/local/assets/dist/js/main.CojC5TiB.js"></script>');
+$assets->addCss('https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css');
+$assets->addString('<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>');
+$assets->addString('<script type="module" crossorigin src="/local/assets/dist/js/main.BcFTC9Ak.js"></script>');
 
 
 $APPLICATION->ShowHead();

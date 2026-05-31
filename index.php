@@ -54,7 +54,7 @@ $APPLICATION->SetPageProperty('main_class','page');
                 'AJAX_MODE' => 'N',
                 'ELEMENTS_COUNT' => 8,
                 'SORT' => ['SORT'=>'ASC'],
-                
+
                 'FILTER' => [
                         'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),
                         'ACTIVE' => 'Y',
@@ -80,8 +80,8 @@ $APPLICATION->SetPageProperty('main_class','page');
                 'AJAX_OPTION_ADDITIONAL' => '',
 
                 'TEMPLATE_VARS' => [
-                        'TITLE' => 'Новые работы',
-                ]
+                        'TITLE' => 'Новое',
+                    ]
             )
     );?>
 
@@ -97,7 +97,7 @@ $APPLICATION->SetPageProperty('main_class','page');
                         'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('blog'),
                         'ACTIVE' => 'Y',
                         'ACTIVE_DATE' => 'Y',
-                        'PROPERTY_TAGS_VALUE' => 'выставки',
+                        'PROPERTY_TAGS_VALUE' => 'События',
                     ],
                 'SELECT' => [
                         'NAME',
@@ -123,7 +123,7 @@ $APPLICATION->SetPageProperty('main_class','page');
 
                 'TEMPLATE_VARS' => [
                         'TITLE' => 'Ближайшие выставки',
-                ]
+                    ]
             )
     );?>
 

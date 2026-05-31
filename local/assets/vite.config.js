@@ -59,7 +59,7 @@ export default {
     reportCompressedSize: false,
 
     sourcemap: process.env.NODE_ENV === 'development',
-
+    cssMinify: false,
     rollupOptions: {
       output: {
         entryFileNames: 'js/[name].[hash].js',

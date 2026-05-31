@@ -22,16 +22,16 @@ $SectionCode = $request->get('SectionCode');
             </button>
             <div class="menu__info">
                 <a href="/" class="menu__logo">
-                    <img src="/local/assets/dist/img/header/01.svg" alt="">
+                    <img src="/local/new_file/logo_header.svg" alt="">
                 </a>
                <!-- <a href="<?=$router->route('gallery');?>" class="menu__gallery text-16">Галерея работа</a>-->
             </div>
             <ul class="menu__pages" data-da=".menu__bottom, 992, 0">
-                <li class="menu__page">
+               <!-- <li class="menu__page">
                     <a href="<?=$router->route('about');?>" class="menu__page-link text-16">Обо мне</a>
-                </li>
+                </li> -->
                 <li class="menu__page">
-                    <a href="<?=$router->route('works');?>" class="menu__page-link text-16">Мои работы</a>
+                    <a href="<?=$router->route('works');?>" class="menu__page-link text-16">Каталог</a>
                 </li>
                 <li class="menu__page">
                     <a href="<?=$router->route('blog');?>" class="menu__page-link text-16">Блог</a>
