@@ -49,6 +49,39 @@ if ($arResult['FILTER']['SECTION_CODE']) {
     $arResult['SECTION'] = $refSections[$lstSectionsIds[0]];
 }
 
+// справочник мастеров
+$rdbMasters = \CIBlockElement::GetList(
+        $dctOrder  = ['SORT' => 'ASC'],
+        $dctFilter = [
+            'IBLOCK_ID'    => \Bxx\Helpers\IBlocks::getIdByCode('masters'),
+            'ACTIVE'       => 'Y',
+        ],
+        false,
+        false,
+        $lstSelect = ['ID', 'NAME', 'DETAIL_PAGE_URL']
+    );
+while($dctMaster = $rdbMasters->getNext()) {
+    $arResult['REFS']['MASTERS'][$dctMaster['ID']] = $dctMaster;
+}
+
+if ($arResult['FILTER']['PROPERTY_MASTER']) {
+    $arResult['MASTER'] = $arResult['REFS']['MASTERS'][$arResult['FILTER']['PROPERTY_MASTER']];
+}
+
+
+if (isset($arResult['MASTER'])) {
+    $arResult['TITLE'] = $arResult['MASTER']['NAME'];
+} elseif (isset($arResult['SECTION'])) {
+    $arResult['TITLE'] = $arResult['SECTION']['NAME'];
+}
+
+
+if (!isset($arResult['TITLE'])) {
+    $arResult['TITLE'] = 'Каталог';
+}
+
+\Kint::dump($arResult);
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SEO

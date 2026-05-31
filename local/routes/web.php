@@ -18,6 +18,14 @@ return function (RoutingConfigurator $routes)
             $routes->name('gallery-element')
                     ->get('{SectionCode}/{ElementCode}/', new PublicPageController('/local/pages/gallery-element.php'));
         });
+    // мастера
+    $routes->name('masters')
+            ->get('/masters/', new PublicPageController('/local/pages/masters.php'));
+    // секция галереи и элемент галереи
+    $routes->prefix('masters')->group(function (RoutingConfigurator $routes) {
+            $routes->name('masters-master')
+                    ->get('{MasterCode}/', new PublicPageController('/local/pages/masters.php')); 
+        });
     // блог    
     $routes->name('blog')
             ->get('/blog/', new PublicPageController('/local/pages/blog.php'));

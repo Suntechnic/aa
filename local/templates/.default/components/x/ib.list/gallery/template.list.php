@@ -4,7 +4,10 @@
  * @var string $signedParamsMutation
  */
 ?>
-<?foreach($arResult['ITEMS'] as $dctItem): $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];?>
+<?foreach($arResult['ITEMS'] as $dctItem): 
+        $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
+        $dctMaster = $arResult['REFS']['MASTERS'][$dctItem['PROPERTY_MASTER_VALUE']];
+    ?>
 <div class="catalog__column card-working">
     <?include('template.item.php');?>
 </div>

@@ -106,7 +106,7 @@ $APPLICATION->SetPageProperty('main_class','page');
                         'IBLOCK_SECTION_ID',
                         'PREVIEW_PICTURE',
                         'PROPERTY_TAGS',
-                        'PROPERTY_DATE_STARTING', 'PROPERTY_DATE_ENDING', 
+                        'PROPERTY_DATE_STARTING', 'PROPERTY_DATE_ENDING'
                     ],
                 
                 'CACHE_TYPE' => APPLICATION_ENV=='dev'?'N':'A',

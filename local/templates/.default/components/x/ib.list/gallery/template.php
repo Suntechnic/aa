@@ -46,11 +46,11 @@ else:?>
     >
     <div class="catalog__container">
         <div class="catalog__inner">
-            <?if($arResult['SECTION'] && $arResult['SECTION']['NAME']):?>
-            <h2 class="catalog__title text-50 fade-up" data-watch data-watch-once><?=$arResult['SECTION']['NAME']?></h2>
-            <?else:?>
-            <h2 class="catalog__title text-50 fade-up" data-watch data-watch-once>Каталог</h2>
-            <?endif?>
+
+
+            <h2 class="catalog__title text-50 fade-up" data-watch data-watch-once><?=$arResult['TITLE']?></h2>
+
+
             <div class="catalog__row fade-up" data-watch data-watch-once data-list>
                 <?include('template.list.php');?>
             </div>
