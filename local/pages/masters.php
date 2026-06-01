@@ -23,7 +23,7 @@ if($MasterCode) {
                     'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('masters'),
                     'CODE' => $MasterCode,
                 ],
-            'select' => ['ID','NAME'],
+            'select' => ['ID','NAME','DETAIL_TEXT'],
         ])->fetch();
     $MasterID = $dctMaster['ID'];
 
@@ -33,6 +33,13 @@ if($MasterCode) {
 }
 $Page = $request->get('PAGEN_1') ?: 1;
 ?>
+
+<?if($MasterCode && $dctMaster):?>
+    <h1><?=$dctMaster['NAME']?></h1>
+    <?if($dctMaster['DETAIL_TEXT']):?>
+    <div class="master-detail-text"><?=$dctMaster['DETAIL_TEXT']?></div>
+    <?endif?>
+<?endif?>
 
 <?$APPLICATION->IncludeComponent(
         'x:ib.list',

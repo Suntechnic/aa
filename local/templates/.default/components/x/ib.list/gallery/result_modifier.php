@@ -70,7 +70,7 @@ if ($arResult['FILTER']['PROPERTY_MASTER']) {
 
 
 if (isset($arResult['MASTER'])) {
-    $arResult['TITLE'] = $arResult['MASTER']['NAME'];
+    $arResult['TITLE'] = 'Работы мастера';//$arResult['MASTER']['NAME'];
 } elseif (isset($arResult['SECTION'])) {
     $arResult['TITLE'] = $arResult['SECTION']['NAME'];
 }
@@ -79,9 +79,6 @@ if (isset($arResult['MASTER'])) {
 if (!isset($arResult['TITLE'])) {
     $arResult['TITLE'] = 'Каталог';
 }
-
-\Kint::dump($arResult);
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SEO

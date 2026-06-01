@@ -108,6 +108,19 @@ $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
                                 <dd class="product__value text-16"><?= $dctItem['PROPERTY_YEAR_VALUE'] ?></dd>
                             </dl>
                             <?endif;?>
+                            <?
+                            $dctMaster = $arResult['REFS']['MASTERS'][$dctItem['PROPERTY_MASTER_VALUE']];
+                            if ($dctMaster):?>
+                            <dl class="product__item">
+                                <dt class="product__category text-16">Мастер:
+                                </dt>
+                                <dd class="product__value text-16">
+                                    <a href="<?=$dctMaster['DETAIL_PAGE_URL']?>">
+                                    <?=$dctMaster['NAME']?>
+                                    </a>
+                                </dd>
+                            </dl>
+                            <?endif;?>
                         </div>
                     </div>
                 </div>
