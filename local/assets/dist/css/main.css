@@ -1339,7 +1339,7 @@ body::after {
 
 @layer component {
   .page.page--header {
-    padding-top: calc(var(--header) + 36px);
+    padding-top: 60px;
   }
 }
 
@@ -2381,11 +2381,6 @@ body::after {
     }
 }
   @layer component{
-    .page.page--header {
-      padding-top: calc(var(--header) + 5.83vw);
-    }
-}
-  @layer component{
     .blog__inner {
       gap: 52px;
     }
@@ -2747,14 +2742,7 @@ body::after {
   @layer component{
     .card-working:hover .card-working__category,
     .card-working:hover .card-working__title {
-      text-decoration: underline;
-      text-decoration-line: underline;
-      text-decoration-style: solid;
-      -webkit-text-decoration-skip: ink;
-              text-decoration-skip-ink: auto;
-      text-decoration-thickness: auto;
-      text-underline-offset: auto;
-      text-underline-position: from-font;
+      text-decoration: none;
     }
     .card-working:hover .card-working__pagination {
       opacity: 1;

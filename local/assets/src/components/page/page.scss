@@ -3,11 +3,7 @@
 @layer component {
   .page {
     &.page--header {
-      padding-top: calc(var(--header) + 36px);
-
-      @include mq($tablet) {
-        padding-top: calc(var(--header) + 5.83vw);
-      }
+      padding-top: 60px;
     }
   }
 }
