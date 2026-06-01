@@ -23,7 +23,7 @@ if($MasterCode) {
                     'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('masters'),
                     'CODE' => $MasterCode,
                 ],
-            'select' => ['ID','NAME','DETAIL_TEXT'],
+            'select' => ['ID','NAME','DETAIL_TEXT', 'DETAIL_PICTURE'],
         ])->fetch();
     $MasterID = $dctMaster['ID'];
 
@@ -36,6 +36,11 @@ $Page = $request->get('PAGEN_1') ?: 1;
 
 <?if($MasterCode && $dctMaster):?>
     <h1><?=$dctMaster['NAME']?></h1>
+    <?if($dctMaster['DETAIL_PICTURE']):?>
+        <div class="master-detail-picture">
+            <img src="<?=\CFile::GetPath($dctMaster['DETAIL_PICTURE'])?>" alt="<?=$dctMaster['NAME']?>">
+        </div>
+    <?endif?>
     <?if($dctMaster['DETAIL_TEXT']):?>
     <div class="master-detail-text"><?=$dctMaster['DETAIL_TEXT']?></div>
     <?endif?>
