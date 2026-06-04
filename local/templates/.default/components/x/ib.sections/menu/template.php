@@ -5,7 +5,7 @@
  */
 ?>
 <div class="catalog__container">
-    <nav class="menu__body menu__body--catalog">
+    <nav class="menu__body">
         <ul class="menu__list">
             <?foreach($arResult['ITEMS'] as $dctItem):?>
             <li class="menu__item <?if($arParams['TEMPLATE_VARS']['SECTION_CODE'] == $dctItem['CODE']):?>_item-active<?endif;?>">
@@ -17,22 +17,3 @@
         </ul>
     </nav>
 </div>
-
-<style>
-    @media (max-width: 991.98px) {
-        .menu__body--catalog {
-            padding: 0 0;
-            margin-bottom: 30px;
-
-
-            .menu__link {
-                font-size: 14px;
-            }
-
-            .menu__list {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-        }
-    }
-</style>

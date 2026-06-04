@@ -33,8 +33,11 @@ $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
                     </ul>
                 </div>
                 <h2 class="product__title text-50 fade-up" data-watch data-watch-once>
-                    <span class="product__circle" title="Недоступный для покупки"></span>    
-                <?=$dctItem['NAME']?></h2>
+                    <?if($dctItem['PROPERTY_NOTAVAILABLE_VALUE'] == 'Y'):?>
+                    <span class="product__circle" title="Работа не доступна"></span>    
+                    <?endif?>
+                    <?=$dctItem['NAME']?>
+                </h2>
             </div>
             <div class="product__inner">
                 <div class="product__sliders fade-up" data-watch data-watch-once>
