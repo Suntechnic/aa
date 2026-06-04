@@ -35,15 +35,28 @@ $Page = $request->get('PAGEN_1') ?: 1;
 ?>
 
 <?if($MasterCode && $dctMaster):?>
-    <h1><?=$dctMaster['NAME']?></h1>
-    <?if($dctMaster['DETAIL_PICTURE']):?>
-        <div class="master-detail-picture">
-            <img src="<?=\CFile::GetPath($dctMaster['DETAIL_PICTURE'])?>" alt="<?=$dctMaster['NAME']?>">
+<section class="block section animate-block fade-up" data-watch data-watch-once>
+    <div class="block__container">
+        <div class="block__inner">
+            <h2><?=$dctItem['NAME']?></h2>
+
+
+            <h1 class="block__title text-50"><?=$dctMaster['NAME']?></h1>
+            <?if($dctMaster['DETAIL_PICTURE']):?>
+            <div class="block__img">
+                <picture>
+                    <img src="<?=\CFile::GetPath($dctMaster['DETAIL_PICTURE'])?>" alt="<?=$dctItem['NAME']?>">
+                </picture>
+            </div>
+            <?endif?>
+            <?if($dctMaster['DETAIL_TEXT']):?>
+            <div class="block__description description-block">
+                <?=$dctMaster['DETAIL_TEXT']?>
+            </div>
+            <?endif?>
         </div>
-    <?endif?>
-    <?if($dctMaster['DETAIL_TEXT']):?>
-    <div class="master-detail-text"><?=$dctMaster['DETAIL_TEXT']?></div>
-    <?endif?>
+    </div>
+</section>
 <?endif?>
 
 <?$APPLICATION->IncludeComponent(

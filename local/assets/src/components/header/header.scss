@@ -3,7 +3,7 @@
 //========================================================================================================================================================
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -162,6 +162,7 @@
   // .menu__bottom
 
   &__bottom {
+    --header: 85px;
     position: relative;
 
     @include mq($tablet) {
@@ -176,7 +177,7 @@
       left: -100%;
       transition: all $time $tr 0s;
       background: cl(bg);
-      height: calc(100dvh - var(--header));
+      height: 110dvh;
       width: 100%;
       z-index: 4;
       border-top: 1px solid cl(bg-secondary);
@@ -394,5 +395,19 @@
 .menu-open {
   .menu__bottom {
     left: 0;
+
+    @media (max-width:992px) {
+      .menu__list {
+        flex-direction: column;
+        padding: 20px 0 0;
+      }
+
+      .menu__link {
+        font-size: 18px;
+      }
+    }
   }
+
 }
+
+

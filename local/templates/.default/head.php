@@ -34,8 +34,8 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100vh;
+        right: 0;
+        bottom: 0;
         background: #0f0f0f;
         z-index: 1400;
         display: flex;
@@ -115,6 +115,4 @@ $assets->addCss('https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fa
 $assets->addString('<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>');
 $assets->addString('<script type="module" crossorigin src="/local/assets/dist/js/main.BcFTC9Ak.js"></script>');
 
-
-$APPLICATION->ShowHead();
-?>
+$APPLICATION->ShowHead();     

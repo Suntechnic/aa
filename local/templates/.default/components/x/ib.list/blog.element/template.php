@@ -48,16 +48,16 @@ $router = $bxApp->getRouter();
             <?endif;?>
 
             <?if($dctItem['DETAIL_PICTURE']):?>
-                <div class="block__img">
-                    <picture>
-                        <img src="<?=$dctItem['DETAIL_PICTURE']['SRC']?>" alt="<?=$dctItem['NAME']?>">
-                    </picture>
-                </div>
+            <div class="block__img">
+                <picture>
+                    <img src="<?=$dctItem['DETAIL_PICTURE']['SRC']?>" alt="<?=$dctItem['NAME']?>">
+                </picture>
+            </div>
             <?endif;?>
             <?if($dctItem['DETAIL_TEXT']):?>
-                <div class="block__description description-block">
-                    <?=$dctItem['DETAIL_TEXT']?>
-                </div>
+            <div class="block__description description-block">
+                <?=$dctItem['DETAIL_TEXT']?>
+            </div>
             <?endif;?>
             <?if ($dctItem['PROPERTY_PHOTOS_FILES']):?>
             <div class="block__gallery">

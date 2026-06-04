@@ -3,7 +3,11 @@
 @layer component {
   .page {
     &.page--header {
-      padding-top: 60px;
+      padding-top: 120px;
+
+      @include mq($tablet) {
+         padding-top: 220px;
+      }
     }
   }
 }
