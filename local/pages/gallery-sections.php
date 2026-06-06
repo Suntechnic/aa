@@ -23,6 +23,7 @@ $APPLICATION->SetPageProperty('title', 'Галерея');
                         'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),
                         'ACTIVE' => 'Y',
                         'ACTIVE_DATE' => 'Y',
+                        'SECTION_ID' => false,
                     ],
                 'SELECT' => [
                         'ID',
