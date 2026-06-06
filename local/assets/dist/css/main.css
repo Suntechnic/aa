@@ -291,6 +291,7 @@
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     scrollbar-gutter: stable;
+    background-color: #000;
   }
   body {
     color: var(--color-primary);
@@ -574,7 +575,10 @@ body::after {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 10000;
+}
+.hero {
+  padding-top: calc(--header + env(safe-area-inset-top));
 }
 .menu__callback {
   --size: 24px;
@@ -617,6 +621,9 @@ body::after {
 .menu__pages {
   display: flex;
   margin-left: auto;
+}
+.menu__page .catalog__container {
+  display: none;
 }
 .menu__page-link {
   line-height: 105.5%; /* 187.5% */
@@ -735,6 +742,12 @@ body::after {
 }
 .menu-open .menu__bottom {
   left: 0;
+}
+.header {
+  padding-top: env(safe-area-inset-top);
+}
+.page {
+  padding-top: calc(var(--header) + env(safe-area-inset-top));
 }
 .footer__inner {
   padding: 30px 0px;
@@ -942,6 +955,7 @@ body::after {
 @layer component {
   .intro {
     position: relative;
+    padding-top: var(--header);
   }
   .intro__slider {
     position: relative;
@@ -1238,7 +1252,7 @@ body::after {
 }
 @layer component {
   .page.page--header {
-    padding-top: 120px;
+    padding-top: calc(var(--header) + 36px);
   }
 }
 @layer component {
@@ -2308,7 +2322,7 @@ body::after {
 }
   @layer component{
     .page.page--header {
-      padding-top: 220px;
+      padding-top: calc(var(--header) + 5.83vw);
     }
 }
   @layer component{
@@ -2610,8 +2624,11 @@ body::after {
   :root {
     --spacing: 80px;
   }
-  .header {
-    height: 87px;
+  .menu__page .catalog__container {
+    display: block;
+  }
+  .menu__bottom > .catalog__container {
+    display: none;
   }
 }
 @media (max-width: 767.98px) {

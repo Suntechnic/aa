@@ -8,7 +8,9 @@
 
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+
 
 <?if(APPLICATION_ENV == 'dev'):?><meta name="robots" content="noindex"><?endif?>
 
@@ -30,6 +32,7 @@
 <link rel="mask-icon" href="/local/assets/dist/safari-pinned-tab.svg">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 <style>
+   
     .preloader {
         position: fixed;
         top: 0;

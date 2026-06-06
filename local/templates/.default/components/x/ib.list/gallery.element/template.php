@@ -15,7 +15,9 @@ $this->setFrameMode(true);
 
 $dctItem = $arResult['ITEM'];
 $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
+$extraTabContent = $dctItem['PREVIEW_TEXT'] || $dctItem['PROPERTY_FILES_VALUE'];
 ?>
+
 <section class="product section animate-block">
     <div class='product__container'>
         <div class="product__body">
@@ -74,7 +76,9 @@ $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
         <div class="product__tabs-nav">
             <button class="product__tab-btn active" data-tab="description">Описание</button>
             <button class="product__tab-btn" data-tab="chars">Характеристики</button>
+            <?if ($extraTabContent):?>
             <button class="product__tab-btn" data-tab="extra">Дополнительно</button>
+            <?endif;?>
         </div>
 
         <!-- Описание -->
@@ -91,6 +95,17 @@ $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
         <!-- Характеристики -->
         <div class="product__tab-content" data-tab-content="chars">
             <div class="product__items">
+                <?
+                $dctMaster = $arResult['REFS']['MASTERS'][$dctItem['PROPERTY_MASTER_VALUE']];
+                if ($dctMaster):?>
+                <dl class="product__item">
+                    <dt class="product__category text-16">Мастер:</dt>
+                    <dd class="product__value text-16">
+                        <a href="<?=$dctMaster['DETAIL_PAGE_URL']?>"><?=$dctMaster['NAME']?></a>
+                    </dd>
+                </dl>
+                <?endif;?>
+
                 <?foreach($arParams['TEMPLATE']['PROPERTIES'] as $dctProp):
                 if (str_starts_with($dctProp['CODE'], 'CHAR_') && $Value = $dctItem['PROPERTY_'.$dctProp['CODE'].'_VALUE']):?>
                 <dl class="product__item">
@@ -119,30 +134,63 @@ $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
             </div>
         </div>
 
-        <!-- Дополнительно -->
-        <div class="product__tab-content" data-tab-content="extra">
-            <div class="product__items">
-                <?foreach($arParams['PROPERTY_CHARS_VALUE'] as $I=>$Value):if($Value):?>
-                <dl class="product__item">
-                    <?if($arParams['PROPERTY_CHARS_DESCRIPTION'][$I]):?>
-                    <dt class="product__category text-16"><?=$arParams['PROPERTY_CHARS_DESCRIPTION'][$I]?>:</dt>
-                    <?endif;?>
-                    <dd class="product__value text-16"><?=$Value?></dd>
-                </dl>
-                <?endif;endforeach;?>
+        <!-- Дополнительно если есть текст/файлы -->
+        <?if ($extraTabContent):?>
+            <div class="product__tab-content" data-tab-content="extra">
+                <div class="product__items">
 
-                <?
-                $dctMaster = $arResult['REFS']['MASTERS'][$dctItem['PROPERTY_MASTER_VALUE']];
-                if ($dctMaster):?>
-                <dl class="product__item">
-                    <dt class="product__category text-16">Мастер:</dt>
-                    <dd class="product__value text-16">
-                        <a href="<?=$dctMaster['DETAIL_PAGE_URL']?>"><?=$dctMaster['NAME']?></a>
-                    </dd>
-                </dl>
-                <?endif;?>
+                
+                    <dl class="product__item">
+                        <dt class="product__category text-16">О продукте:</dt>
+                        <dd class="product__value text-16">
+                            <?=$dctItem['PREVIEW_TEXT']?>
+                        </dd>
+                    </dl>
+                    
+                    <?
+                    $arFileIds = $dctItem['PROPERTY_FILES_VALUE'];
+                    if (!empty($arFileIds)):?>
+                        <? foreach($arFileIds as $fileId): ?>
+                        <?
+                        $arFile = CFile::GetFileArray($fileId); 
+
+                        $src = $arFile["SRC"];
+                        $name = $arFile["ORIGINAL_NAME"] ?: $arFile["FILE_NAME"];
+
+                        $isImage = $arFile["CONTENT_TYPE"] && str_starts_with($arFile["CONTENT_TYPE"], "image/");
+
+
+                        ?>
+
+                        <dl class="product__item">
+                            <dd class="product__value text-16">
+                                <? if ($isImage): ?>
+                                    <img src="<?= $src ?>" alt="<?= htmlspecialcharsbx($name) ?>">
+                                <? else: ?>
+                                    <a href="<?= $src ?>" target="_blank" download>
+                                        <?= htmlspecialcharsbx($name) ?>
+                                        (<?= CFile::FormatSize($arFile["FILE_SIZE"]) ?>)
+                                    </a>
+                                <? endif; ?>
+                            </dd>
+                        </dl>
+
+                        <?endforeach;?>
+                    <?endif;?>
+
+                    <?foreach($arParams['PROPERTY_CHARS_VALUE'] as $I=>$Value):if($Value):?>
+                    <dl class="product__item">
+                        <?if($arParams['PROPERTY_CHARS_DESCRIPTION'][$I]):?>
+                        <dt class="product__category text-16"><?=$arParams['PROPERTY_CHARS_DESCRIPTION'][$I]?>:</dt>
+                        <?endif;?>
+                        <dd class="product__value text-16"><?=$Value?></dd>
+                    </dl>
+                    <?endif;endforeach;?>
+
+                    
+                </div>
             </div>
-        </div>
+        <?endif;?>
     </div>
 </div>
             </div>

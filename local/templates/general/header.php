@@ -32,6 +32,38 @@ $SectionCode = $request->get('SectionCode');
                 </li> -->
                 <li class="menu__page">
                     <a href="<?=$router->route('works');?>" class="menu__page-link text-16">Каталог</a>
+                    <?$APPLICATION->IncludeComponent(
+                    'x:ib.sections',
+                    'menu',
+                    Array(
+                            'AJAX_MODE' => 'N',
+                            'ELEMENTS_COUNT' => 12,
+                            'SORT' => ['SORT'=>'ASC'],
+                            
+                            'FILTER' => [
+                                    'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),
+                                    'ACTIVE' => 'Y',
+                                    'ACTIVE_DATE' => 'Y',
+                                    'SECTION_ID' => false,
+                                ],
+                            'SELECT' => [
+                                    'ID',
+                                    'NAME',
+                                    'CODE',
+                                    'IBLOCK_ID',
+                                    'SECTION_PAGE_URL',
+                            ],
+                            
+                            'CACHE_TYPE' => APPLICATION_ENV=='dev'?'N':'A',
+                            'CACHE_TIME' => 3600,
+                            'CACHE_FILTER' => 'Y',
+                            'CACHE_GROUPS' => 'Y',
+                            'TEMPLATE_VARS' => [
+                                    'SECTION_CODE' => $SectionCode,
+                                ],
+
+                        )
+                );?>
                 </li>
                 <li class="menu__page">
                     <a href="<?=$router->route('blog');?>" class="menu__page-link text-16">Блог</a>

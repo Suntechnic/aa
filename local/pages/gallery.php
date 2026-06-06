@@ -49,6 +49,7 @@ if($SectionCode) {
                     'CACHE_GROUPS' => 'Y',
                     'TEMPLATE_VARS' => [
                             'SECTION_CODE' => $SectionCode,
+                            'CLASS' => 'menu__body--catalog'
                         ],
 
                 )

@@ -25,6 +25,7 @@ $lstSelect = [
         'DETAIL_TEXT',
         'IBLOCK_SECTION_ID',
         'TIMESTAMP_X',
+        'PREVIEW_TEXT',
     ];
 $lstProps = \Bitrix\Iblock\PropertyTable::getList([
         'select' => [
