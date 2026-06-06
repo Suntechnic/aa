@@ -15,7 +15,42 @@ $this->setFrameMode(true);
 
 $dctItem = $arResult['ITEM'];
 $dctSection = $arResult['REFS']['SECTIONS'][$dctItem['IBLOCK_SECTION_ID']];
-$extraTabContent = $dctItem['PREVIEW_TEXT'] || $dctItem['PROPERTY_FILES_VALUE'];
+
+$lstCharsTabContent = [];
+if ($dctItem['PROPERTY_MASTER_VALUE']) $lstCharsTabContent[] = [
+        'NAME' => 'Мастер',
+        'VALUE' => '<a href="'.$arResult['REFS']['MASTERS'][$dctItem['PROPERTY_MASTER_VALUE']]['DETAIL_PAGE_URL'].'">'.$arResult['REFS']['MASTERS'][$dctItem['PROPERTY_MASTER_VALUE']]['NAME'].'</a>'
+    ];
+foreach($arParams['TEMPLATE']['PROPERTIES'] as $dctProp) {
+    if (str_starts_with($dctProp['CODE'], 'CHAR_') && $Value = $dctItem['PROPERTY_'.$dctProp['CODE'].'_VALUE']) {
+        $lstCharsTabContent[] = [
+            'NAME' => $dctProp['NAME'],
+            'VALUE' => is_array($Value) ? implode(', ', $Value) : $Value
+        ];
+    }
+}
+foreach($arParams['PROPERTY_CHARS_VALUE'] as $I=>$Value) { if($Value) {
+    $dctChar = [];
+    if($arParams['PROPERTY_CHARS_DESCRIPTION'][$I]) {
+        $dctChar['NAME'] = $arParams['PROPERTY_CHARS_DESCRIPTION'][$I];
+    }
+    $dctChar['VALUE'] = $Value;
+    $lstCharsTabContent[] = $dctChar;
+}}
+
+
+if($dctItem['PROPERTY_WEIGHT_VALUE']) $lstCharsTabContent[] = [
+        'NAME' => 'Вес',
+        'VALUE' => $dctItem['PROPERTY_WEIGHT_VALUE']
+    ];
+
+if($dctItem['PROPERTY_YEAR_VALUE']) $lstCharsTabContent[] = [
+        'NAME' => 'Год',
+        'VALUE' => $dctItem['PROPERTY_YEAR_VALUE']
+    ];
+
+
+$ExtraTabContent = $dctItem['PREVIEW_TEXT'] || $dctItem['FILES'] || $dctItem['IMAGES'];
 ?>
 
 <section class="product section animate-block">
@@ -72,127 +107,99 @@ $extraTabContent = $dctItem['PREVIEW_TEXT'] || $dctItem['PROPERTY_FILES_VALUE'];
 
                 </div>
                 <div class="product__content fade-up" data-watch data-watch-once>
-    <div class="product__tabs">
-        <div class="product__tabs-nav">
-            <button class="product__tab-btn active" data-tab="description">Описание</button>
-            <button class="product__tab-btn" data-tab="chars">Характеристики</button>
-            <?if ($extraTabContent):?>
-            <button class="product__tab-btn" data-tab="extra">Дополнительно</button>
-            <?endif;?>
-        </div>
-
-        <!-- Описание -->
-        <div class="product__tab-content active" data-tab-content="description">
-            <?if ($dctItem['DETAIL_TEXT']):?>
-            <div class="product__text text-16">
-                <?=$dctItem['DETAIL_TEXT']?>
-            </div>
-            <?else:?>
-            <p class="text-16">Описание отсутствует.</p>
-            <?endif;?>
-        </div>
-
-        <!-- Характеристики -->
-        <div class="product__tab-content" data-tab-content="chars">
-            <div class="product__items">
-                <?
-                $dctMaster = $arResult['REFS']['MASTERS'][$dctItem['PROPERTY_MASTER_VALUE']];
-                if ($dctMaster):?>
-                <dl class="product__item">
-                    <dt class="product__category text-16">Мастер:</dt>
-                    <dd class="product__value text-16">
-                        <a href="<?=$dctMaster['DETAIL_PAGE_URL']?>"><?=$dctMaster['NAME']?></a>
-                    </dd>
-                </dl>
-                <?endif;?>
-
-                <?foreach($arParams['TEMPLATE']['PROPERTIES'] as $dctProp):
-                if (str_starts_with($dctProp['CODE'], 'CHAR_') && $Value = $dctItem['PROPERTY_'.$dctProp['CODE'].'_VALUE']):?>
-                <dl class="product__item">
-                    <dt class="product__category text-16"><?=$dctProp['NAME']?>:</dt>
-                    <?if (is_array($Value)):?>
-                    <dd class="product__value text-16"><?=implode(', ', $Value)?></dd>
-                    <?else:?>
-                    <dd class="product__value text-16"><?=$Value?></dd>
-                    <?endif;?>
-                </dl>
-                <?endif;endforeach;?>
-
-                <?if($dctItem['PROPERTY_WEIGHT_VALUE']):?>
-                <dl class="product__item">
-                    <dt class="product__category text-16">Вес:</dt>
-                    <dd class="product__value text-16"><?=$dctItem['PROPERTY_WEIGHT_VALUE']?></dd>
-                </dl>
-                <?endif;?>
-
-                <?if($dctItem['PROPERTY_YEAR_VALUE']):?>
-                <dl class="product__item">
-                    <dt class="product__category text-16">Год:</dt>
-                    <dd class="product__value text-16"><?=$dctItem['PROPERTY_YEAR_VALUE']?></dd>
-                </dl>
-                <?endif;?>
-            </div>
-        </div>
-
-        <!-- Дополнительно если есть текст/файлы -->
-        <?if ($extraTabContent):?>
-            <div class="product__tab-content" data-tab-content="extra">
-                <div class="product__items">
-
-                
-                    <dl class="product__item">
-                        <dt class="product__category text-16">О продукте:</dt>
-                        <dd class="product__value text-16">
-                            <?=$dctItem['PREVIEW_TEXT']?>
-                        </dd>
-                    </dl>
-                    
-                    <?
-                    $arFileIds = $dctItem['PROPERTY_FILES_VALUE'];
-                    if (!empty($arFileIds)):?>
-                        <? foreach($arFileIds as $fileId): ?>
-                        <?
-                        $arFile = CFile::GetFileArray($fileId); 
-
-                        $src = $arFile["SRC"];
-                        $name = $arFile["ORIGINAL_NAME"] ?: $arFile["FILE_NAME"];
-
-                        $isImage = $arFile["CONTENT_TYPE"] && str_starts_with($arFile["CONTENT_TYPE"], "image/");
+                    <div class="product__tabs">
+                        <div class="product__tabs-nav">
+                            <?if ($dctItem['DETAIL_TEXT']):?>
+                            <button class="product__tab-btn active" data-tab="description">Описание</button>
+                            <?endif;?>
+                            <?if (!empty($lstCharsTabContent)):?>
+                            <button class="product__tab-btn" data-tab="chars">Характеристики</button>
+                            <?endif;?>
+                            <?if ($ExtraTabContent):?>
+                            <button class="product__tab-btn" data-tab="extra">Дополнительно</button>
+                            <?endif;?>
+                        </div>
 
 
-                        ?>
-
-                        <dl class="product__item">
-                            <dd class="product__value text-16">
-                                <? if ($isImage): ?>
-                                    <img src="<?= $src ?>" alt="<?= htmlspecialcharsbx($name) ?>">
-                                <? else: ?>
-                                    <a href="<?= $src ?>" target="_blank" download>
-                                        <?= htmlspecialcharsbx($name) ?>
-                                        (<?= CFile::FormatSize($arFile["FILE_SIZE"]) ?>)
-                                    </a>
-                                <? endif; ?>
-                            </dd>
-                        </dl>
-
-                        <?endforeach;?>
-                    <?endif;?>
-
-                    <?foreach($arParams['PROPERTY_CHARS_VALUE'] as $I=>$Value):if($Value):?>
-                    <dl class="product__item">
-                        <?if($arParams['PROPERTY_CHARS_DESCRIPTION'][$I]):?>
-                        <dt class="product__category text-16"><?=$arParams['PROPERTY_CHARS_DESCRIPTION'][$I]?>:</dt>
+                        <?if ($dctItem['DETAIL_TEXT']):?>
+                        <!-- Описание -->
+                        <div class="product__tab-content active" data-tab-content="description">
+                            <div class="product__text text-16">
+                                <?=$dctItem['DETAIL_TEXT']?>
+                            </div>
+                        </div>
                         <?endif;?>
-                        <dd class="product__value text-16"><?=$Value?></dd>
-                    </dl>
-                    <?endif;endforeach;?>
+                        <?if (!empty($lstCharsTabContent)):?>
+                        <!-- Характеристики -->
+                        <div class="product__tab-content" data-tab-content="chars">
+                            <div class="product__items">
+                                <?foreach($lstCharsTabContent as $dctProp):?>
+                                <dl class="product__item">
+                                    <?if(isset($dctProp['NAME'])):?>
+                                    <dt class="product__category text-16"><?=$dctProp['NAME']?>:</dt>
+                                    <?endif;?>
+                                    <dd class="product__value text-16"><?=$dctProp['VALUE']?></dd>
+                                </dl>
+                                <?endforeach;?>
+                            </div>
+                        </div>
+                        <?endif;?>
+                        
+                        <!-- Дополнительно если есть текст/файлы -->
+                        <?if ($ExtraTabContent):?>
+                        <div class="product__tab-content" data-tab-content="extra">
+                            <div class="product__items">
 
-                    
+                            
+                                <?if ($dctItem['PREVIEW_TEXT']):?>
+                                <div class="product__text text-16">
+                                    <?=$dctItem['PREVIEW_TEXT']?>
+                                </div>
+                                <?endif;?>
+                                
+                                <?if (!empty($dctItem['FILES'])): foreach($dctItem['FILES'] as $arFile): ?>
+                                    <?
+                                    $Src = $arFile["SRC"];
+                                    $Name = $arFile["ORIGINAL_NAME"] ?: $arFile["FILE_NAME"];
+                                    ?>
+
+                                    <dl class="product__item">
+                                        <dd class="product__value text-16">
+                                            <a href="<?=$Src?>" target="_blank" download>
+                                                <?= htmlspecialcharsbx($Name) ?>
+                                                (<?= CFile::FormatSize($arFile["FILE_SIZE"]) ?>)
+                                            </a>
+                                        </dd>
+                                    </dl>
+                                <?endforeach;endif;?>
+
+                                <?if (!empty($dctItem['IMAGES'])):?>
+                                <div class="block__gallery">
+                                    <div class="block__slider swiper js-slider-block">
+                                        <div class="block__swiper swiper-wrapper">
+                                            <?foreach($dctItem['IMAGES'] as $dctPhoto): ?>
+                                            <a href="<?=$dctPhoto['SRC']?>" data-fslightbox="gallery-extra" class="block__slide swiper-slide">
+                                                <div class="block__slide-img">
+                                                    <picture>
+                                                        <img src="<?=$dctPhoto['SRC']?>" alt="<?=$dctItem['NAME']?>">
+                                                    </picture>
+                                                </div>
+                                            </a>
+                                            <?endforeach;?>
+                                        </div>
+                                        <div class="block__pagination"></div>
+                                        <div class="block__arrows swiper-arrows">
+                                            <button type="button" class="block__arrow block__arrow--prev swiper-arrow" style='--icon:url(../img/icons/prev.svg)'></button>
+                                            <button type="button" class="block__arrow block__arrow--next swiper-arrow" style='--icon:url(../img/icons/next.svg)'></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?endif;?>
+                            </div>
+                        </div>
+                        <?endif;?>
+                    </div>
                 </div>
-            </div>
-        <?endif;?>
-    </div>
-</div>
             </div>
         </div>
     </div>
