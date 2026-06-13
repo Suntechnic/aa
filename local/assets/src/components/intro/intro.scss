@@ -3,7 +3,6 @@
 @layer component {
   .intro {
     position: relative;
-    padding-top: var(--header);
 
     @include mq($tablet) {
       height: 100dvh;

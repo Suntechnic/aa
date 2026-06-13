@@ -3,7 +3,7 @@
 //========================================================================================================================================================
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -428,8 +428,4 @@
 
 .header {
     padding-top: env(safe-area-inset-top);
-}
-
-.page {
-    padding-top: calc(var(--header) + env(safe-area-inset-top));
 }
