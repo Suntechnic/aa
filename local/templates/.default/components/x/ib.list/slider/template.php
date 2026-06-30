@@ -23,10 +23,16 @@ $this->setFrameMode(true);
                     <picture>
                         <img src="<?=$dctItem['DETAIL_PICTURE']['SRC']?>" alt="<?=$dctItem['NAME']?>">
                     </picture>
+                    <?if($dctItem['NAME'] || $dctItem['PREVIEW_TEXT']):?>
                     <div class="intro__slide-content">
-                        <div class="intro__slide-title">Нож "Бурый Вепрь"</div>
-                        <div class="intro__slide-text">Охотничий нож ручной работы в калссическом боуи-стиле - воплощение силы, надежности и благородства традиционного ремесла.</div>
+                        <?if($dctItem['NAME']):?>
+                        <div class="intro__slide-title"><?=$dctItem['NAME']?></div>
+                        <?endif?>
+                        <?if($dctItem['PREVIEW_TEXT']):?>
+                        <div class="intro__slide-text"><?=$dctItem['PREVIEW_TEXT']?></div>
+                        <?endif?>
                     </div>
+                    <?endif?>
                 </div>
             </div>
             <?endforeach?>

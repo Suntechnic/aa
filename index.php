@@ -25,6 +25,8 @@ $APPLICATION->SetPageProperty('main_class','page');
                 'SELECT' => [
                         'DETAIL_PICTURE',
                         'PROPERTY_URL',
+                        'NAME',
+                        'PREVIEW_TEXT',
                     ],
                 
                 'CACHE_TYPE' => APPLICATION_ENV=='dev'?'N':'A',

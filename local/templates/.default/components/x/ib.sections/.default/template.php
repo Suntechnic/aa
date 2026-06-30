@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 
 ?>
 <section class="work section animate-block">
-    <div class='work__container'>
+    <div class="work__container">
         <div class="work__inner">
             <h2 class="work__title text-50 fade-up" data-watch data-watch-once>Мои работы</h2>
             <div class="work__row fade-up" data-watch data-watch-once>

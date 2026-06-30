@@ -46,7 +46,12 @@ while($dctSection = $rdbSection->getNext()) {
 $arResult['REFS']['SECTIONS'] = $refSections;
 
 if ($arResult['FILTER']['SECTION_CODE']) {
-    $arResult['SECTION'] = $refSections[$lstSectionsIds[0]];
+    foreach ($refSections as $dctSection) {
+        if ($dctSection['CODE'] == $arResult['FILTER']['SECTION_CODE']) {
+            $arResult['SECTION'] = $dctSection;
+            break;
+        }
+    }
 }
 
 // справочник мастеров
