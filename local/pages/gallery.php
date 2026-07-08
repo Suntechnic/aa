@@ -15,7 +15,9 @@ $dctFilter = [
         'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),
         'ACTIVE' => 'Y',
         'ACTIVE_DATE' => 'Y',
+        '!IBLOCK_SECTION_ID' => \App\Gallery\Sections::getPrivateSectionsId()
     ];
+
 if($SectionCode) {
     $dctFilter['SECTION_CODE'] = $SectionCode;
     $dctFilter['INCLUDE_SUBSECTIONS'] = 'Y';
@@ -54,6 +56,10 @@ if($SectionCode) {
 
                 )
         );
+
+    $dctFilter['!IBLOCK_SECTION_ID'] = \App\Gallery\Sections::getPrivateSectionsId($SectionCode);
+} else  {
+    $dctFilter['!IBLOCK_SECTION_ID'] = \App\Gallery\Sections::getPrivateSectionsId();
 }
 
 $Page = $request->get('PAGEN_1') ?: 1;
