@@ -25,11 +25,11 @@ $this->setFrameMode(true);
                     </picture>
                     <?if($dctItem['NAME'] || $dctItem['PREVIEW_TEXT']):?>
                     <div class="intro__slide-content">
-                        <?if($dctItem['NAME']):?>
-                        <div class="intro__slide-title"><?=$dctItem['NAME']?></div>
-                        <?endif?>
                         <?if($dctItem['PREVIEW_TEXT']):?>
-                        <div class="intro__slide-text"><?=$dctItem['PREVIEW_TEXT']?></div>
+                        <div class="intro__slide-title"><?=$dctItem['PREVIEW_TEXT']?></div>
+                        <?endif?>
+                        <?if($dctItem['DETAIL_TEXT']):?>
+                        <div class="intro__slide-text"><?=$dctItem['DETAIL_TEXT']?></div>
                         <?endif?>
                     </div>
                     <?endif?>

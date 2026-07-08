@@ -14,9 +14,9 @@ $this->setFrameMode(true);
 
 ?>
 <section class="work section animate-block">
-    <div class="work__container">
+    <div class='work__container'>
         <div class="work__inner">
-            <h2 class="work__title text-50 fade-up" data-watch data-watch-once>Мои работы</h2>
+            <h2 class="work__title text-50 fade-up" data-watch data-watch-once></h2>
             <div class="work__row fade-up" data-watch data-watch-once>
                 <?foreach($arResult['ITEMS'] as $dctItem):?>
                 <a href="<?=$dctItem['SECTION_PAGE_URL']?>" class="work__card card-work">

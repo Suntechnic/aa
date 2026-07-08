@@ -27,7 +27,7 @@ if($SectionCode) {
             Array(
                     'AJAX_MODE' => 'N',
                     'ELEMENTS_COUNT' => 120,
-                    'SORT' => ['SORT'=>'ASC'],
+                	'SORT' => ['SORT'=>'ASC'],
                     
                     'FILTER' => [
                             'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),
