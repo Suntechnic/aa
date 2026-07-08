@@ -65,7 +65,7 @@ $Page = $request->get('PAGEN_1') ?: 1;
         Array(
                 'AJAX_MODE' => 'N',
                 'ELEMENTS_COUNT' => 32,
-                'SORT' => ['SORT'=>'ASC'],
+                'SORT' => ['PROPERTY_NOTAVAILABLE_VALUE'=>'ASC','SORT'=>'ASC'],
                 
                 'FILTER' => $dctFilter,
                 'SELECT' => [
