@@ -9,6 +9,9 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Галерея');
 $APPLICATION->SetPageProperty('title', 'Галерея');
 
+$bxApp = \Bitrix\Main\Application::getInstance();
+$router = $bxApp->getRouter();
+$APPLICATION->AddChainItem('Галерея', $router->route('gallery'));
 ?>
 
 <?$APPLICATION->IncludeComponent(

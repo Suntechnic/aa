@@ -11,6 +11,9 @@ $request = $bxApp->getContext()->getRequest();
 $SectionCode = $request->get('SectionCode');
 $ElementCode = $request->get('ElementCode');
 
+$router = $bxApp->getRouter();
+$APPLICATION->AddChainItem('Галерея', $router->route('gallery'));
+
 $dctFilter = [
         'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),
         'ACTIVE' => 'Y',

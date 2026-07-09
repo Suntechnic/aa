@@ -1,9 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 /** @var array $arParams */
 /** @var array $arResult */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
+/** @var CMain $APPLICATION */
+/** @var CUser $USER */
+/** @var CDatabase $DB */
 /** @var CBitrixComponentTemplate $this */
 /** @var string $templateName */
 /** @var string $templateFile */
@@ -57,18 +57,17 @@ $ExtraTabContent = $dctItem['PREVIEW_TEXT'] || $dctItem['FILES'] || $dctItem['IM
     <div class='product__container'>
         <div class="product__body">
             <div class="product__top">
+
                 <div class="product__breadcrumb breadcrumb fade-up" data-watch data-watch-once>
-                    <ul class="breadcrumb__list">
-                        <li class="breadcrumb__item text-16">
-                            <a href="<?=$dctSection['SECTION_PAGE_URL']?>">
-                                <?=$dctSection['NAME']?>
-                            </a>
-                        </li>
-                        <li class="breadcrumb__item text-16 breadcrumb__item--active">
-                            <span><?=$dctItem['NAME']?></span>
-                        </li>
-                    </ul>
+                    <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+                            "START_FROM" => "0", 
+                            "PATH" => "", 
+                            "SITE_ID" => "s1" 
+                        )
+                    );?>
                 </div>
+
+
                 <h2 class="product__title text-50 fade-up" data-watch data-watch-once>
                     <?if($dctItem['PROPERTY_NOTAVAILABLE_VALUE'] == 'Y'):?>
                     <span class="product__circle" title="Работа не доступна"></span>    

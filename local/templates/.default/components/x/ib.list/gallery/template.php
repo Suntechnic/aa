@@ -48,6 +48,16 @@ else:?>
         <div class="catalog__inner">
 
 
+            <div class="product__breadcrumb breadcrumb fade-up" data-watch data-watch-once>
+                <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+                        "START_FROM" => "0", 
+                        "PATH" => "", 
+                        "SITE_ID" => "s1" 
+                    )
+                );?>
+            </div>
+
+
             <h2 class="catalog__title text-50 fade-up" data-watch data-watch-once><?=$arResult['TITLE']?></h2>
 
 

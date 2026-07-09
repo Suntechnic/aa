@@ -32,7 +32,6 @@ $rdbSection = \CIBlockSection::GetList(
         $dctOrder  = ['SORT' => 'ASC'],
         $dctFilter = [
             'IBLOCK_ID'    => $arResult['FILTER']['IBLOCK_ID'],
-            'ID'          => $lstSectionsIds,
         ],
         false,
         $lstSelect = ['ID', 'NAME', 'SECTION_PAGE_URL'],
@@ -90,5 +89,10 @@ if (!isset($arResult['TITLE'])) {
 if ($arResult['SECTION']['ID']) {
     $ipropSectionValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arResult['SECTION']['IBLOCK_ID'], $arResult['SECTION']['ID']);
     $arResult['SECTION']['SEO'] = $ipropSectionValues->getValues();
+
+    $arResult['SECTION']['PATH'] = \App\Gallery\Sections::getPath($arResult['SECTION']['ID']);
+    
     $this->__component->setResultCacheKeys(['SECTION']);
 }
+\Kint::dump($arResult);
+

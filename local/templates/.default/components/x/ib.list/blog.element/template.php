@@ -13,23 +13,24 @@ $dctItem = $arResult['ITEM'];
 
 $bxApp = \Bitrix\Main\Application::getInstance();
 $router = $bxApp->getRouter();
+
+$APPLICATION->AddChainItem('Блог', $router->route('blog'));
+$APPLICATION->AddChainItem($dctItem['NAME']);
 ?>
 
 <section class="block section animate-block fade-up" data-watch data-watch-once>
     <div class="block__container">
         <div class="block__inner">
+
             <div class="block__breadcrumb breadcrumb">
-                <ul class="breadcrumb__list">
-                    <li class="breadcrumb__item text-16">
-                        <a href="<?=$router->route('blog');?>">
-                            Блог
-                        </a>
-                    </li>
-                    <li class="breadcrumb__item text-16 breadcrumb__item--active">
-                        <span><?=$dctItem['NAME']?></span>
-                    </li>
-                </ul>
+                <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+                            "START_FROM" => "0", 
+                            "PATH" => "", 
+                            "SITE_ID" => "s1" 
+                        )
+                    );?>
             </div>
+
             <h2 class="block__title text-50"><?=$dctItem['NAME']?></h2>
             
             <?if (!empty($dctItem['PROPERTY_DATE_STARTING_VALUE'])): 

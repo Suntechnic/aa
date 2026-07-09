@@ -7,9 +7,14 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle("Галерея");
 $APPLICATION->SetPageProperty('title', 'Галерея');
 
+
+
 $bxApp = \Bitrix\Main\Application::getInstance();
 $request = $bxApp->getContext()->getRequest();
 $SectionCode = $request->get('SectionCode');
+
+$router = $bxApp->getRouter();
+$APPLICATION->AddChainItem('Галерея', $router->route('gallery'));
 
 $dctFilter = [
         'IBLOCK_ID' => \Bxx\Helpers\IBlocks::getIdByCode('gallery'),

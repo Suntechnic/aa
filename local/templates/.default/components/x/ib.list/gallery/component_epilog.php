@@ -7,6 +7,11 @@
  * @var CMain $APPLICATION
  */
 
+if ($arResult['SECTION']['PATH']) {
+    foreach ($arResult['SECTION']['PATH'] as $arPath) {
+        $APPLICATION->AddChainItem($arPath['NAME'], $arPath['SECTION_PAGE_URL']);
+    }
+}
 
 $dctSeo = $arResult['SECTION']['SEO'];
 

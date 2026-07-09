@@ -14,7 +14,7 @@ if(empty($arResult))
 $strReturn = '';
 
 
-$strReturn .= '<div class="breadrumbs mb-4 mb-md-2" itemscope itemtype="http://schema.org/BreadcrumbList">';
+$strReturn .= '<ul class="breadcrumb__list" itemscope itemtype="http://schema.org/BreadcrumbList">';
 
 $itemSize = count($arResult);
 for($index = 0; $index < $itemSize; $index++)
@@ -25,23 +25,21 @@ for($index = 0; $index < $itemSize; $index++)
 	if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1)
 	{
 		$strReturn .= '
-			<div class="breadrumbs-item" id="bx_breadcrumb_'.$index.'" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			<li class="breadcrumb__item text-16" id="bx_breadcrumb_'.$index.'" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
 				'.$arrow.'
-				<a class="breadrumbs-link" href="'.$arResult[$index]["LINK"].'" title="'.$title.'" itemprop="item">
+				<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'" itemprop="item">
 					<span itemprop="name">'.$title.'</span>
 				</a>
 				<meta itemprop="position" content="'.($index + 1).'" />
-			</div>';
-	}
-	else
-	{
+			</li>';
+	} else {
 		$strReturn .= '
-			<div class="breadrumbs-item">
-				'.$title.'
-			</div>';
+			<li class="breadcrumb__item text-16 breadcrumb__item--active">
+				<span>'.$title.'</span>
+			</li>';
 	}
 }
 
-$strReturn .= '</div>';
+$strReturn .= '</ul>';
 
 return $strReturn;

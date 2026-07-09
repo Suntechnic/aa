@@ -8,7 +8,7 @@
  */
 
 // дата последней модификации
-if ($arResult["ITEMS"]["TIMESTAMP_X"]) \Bitrix\Main\Context::getCurrent()->getResponse()->setLastModified($arResult["ITEMS"]["TIMESTAMP_X"]);
+//if ($arResult["ITEM"]["TIMESTAMP_X"]) \Bitrix\Main\Context::getCurrent()->getResponse()->setLastModified($arResult["ITEM"]["TIMESTAMP_X"]);
 
 // установка заголовка
 $dctSeo = $arResult['ITEM']['SEO'];
@@ -25,5 +25,11 @@ if ($dctSeo['ELEMENT_META_DESCRIPTION']) {
    $APPLICATION->SetPageProperty('description', $arResult['ITEM']['NAME'], ['COMPONENT_NAME' => $component->getName()]);
 }
 
+if ($arResult['SECTION']['PATH']) {
+    foreach ($arResult['SECTION']['PATH'] as $arPath) {
+        $APPLICATION->AddChainItem($arPath['NAME'], $arPath['SECTION_PAGE_URL']);
+    }
+}
 
-
+// элемент в хлебные крошки
+$APPLICATION->AddChainItem($arResult['ITEM']['NAME']);
