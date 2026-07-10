@@ -571,7 +571,7 @@ body::after {
 ---------------------------- */
 /* stylelint-disable-next-line scss/percent-placeholder-pattern */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -952,6 +952,7 @@ body::after {
 @layer component {
   .intro {
     position: relative;
+    padding-top: var(--header);
   }
   .intro__slider {
     position: relative;
@@ -1246,7 +1247,11 @@ body::after {
     margin: 0 auto;
   }
 }
-@layer component {}
+@layer component {
+  .page.page--header {
+    padding-top: calc(var(--header) + 15px);
+  }
+}
 @layer component {
   .blog__inner {
     display: flex;
@@ -1515,7 +1520,7 @@ body::after {
     gap: 12px;
     font-weight: 300;
     font-family: var(--font-secondary);
-    font-size: 10px;
+    font-size: 14px;
     transition: all 0.3s ease-in 0s;
   }
   .breadcrumb__item::after {
@@ -2310,6 +2315,11 @@ body::after {
     .catalog__bottom {
       gap: 1.56vw;
       margin: 0.26vw auto 0px;
+    }
+}
+  @layer component{
+    .page.page--header {
+      padding-top: calc(var(--header) + 30px);
     }
 }
   @layer component{

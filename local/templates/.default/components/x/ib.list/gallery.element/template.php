@@ -187,10 +187,10 @@ $ExtraTabContent = $dctItem['PREVIEW_TEXT'] || $dctItem['FILES'] || $dctItem['IM
                                             <?endforeach;?>
                                         </div>
                                         <div class="block__pagination"></div>
-                                        <div class="block__arrows swiper-arrows">
+                                        <!-- <div class="block__arrows swiper-arrows">
                                             <button type="button" class="block__arrow block__arrow--prev swiper-arrow" style='--icon:url(../img/icons/prev.svg)'></button>
                                             <button type="button" class="block__arrow block__arrow--next swiper-arrow" style='--icon:url(../img/icons/next.svg)'></button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <?endif;?>

@@ -26,7 +26,7 @@
 
 
             .menu__link {
-                font-size: 14px;
+                font-size: 24px;
             }
 
             .menu__list {

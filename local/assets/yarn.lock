@@ -372,11 +372,6 @@
   resolved "https://registry.npmjs.org/@parcel/watcher-linux-x64-glibc/-/watcher-linux-x64-glibc-2.5.6.tgz"
   integrity sha512-kbT5wvNQlx7NaGjzPFu8nVIW1rWqV780O7ZtkjuWaPUgpv2NMFpjYERVi0UYj1msZNyCzGlaCWEtzc+exjMGbQ==
 
-"@parcel/watcher-linux-x64-musl@2.5.6":
-  version "2.5.6"
-  resolved "https://registry.npmjs.org/@parcel/watcher-linux-x64-musl/-/watcher-linux-x64-musl-2.5.6.tgz"
-  integrity sha512-1JRFeC+h7RdXwldHzTsmdtYR/Ku8SylLgTU/reMuqdVD7CtLwf0VR1FqeprZ0eHQkO0vqsbvFLXUmYm/uNKJBg==
-
 "@parcel/watcher@^2.4.1":
   version "2.5.6"
   resolved "https://registry.npmjs.org/@parcel/watcher/-/watcher-2.5.6.tgz"
@@ -422,11 +417,6 @@
   version "4.60.1"
   resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.60.1.tgz"
   integrity sha512-77PpsFQUCOiZR9+LQEFg9GClyfkNXj1MP6wRnzYs0EeWbPcHs02AXu4xuUbM1zhwn3wqaizle3AEYg5aeoohhg==
-
-"@rollup/rollup-linux-x64-musl@4.60.1":
-  version "4.60.1"
-  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.60.1.tgz"
-  integrity sha512-5cIATbk5vynAjqqmyBjlciMJl1+R/CwX9oLk/EyiFXDWd95KpHdrOJT//rnUl4cUcskrd0jCCw3wpZnhIHdD9w==
 
 "@simple-libs/child-process-utils@^1.0.0":
   version "1.0.2"
@@ -2841,11 +2831,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fslightbox@^3.7.5:
-  version "3.7.5"
-  resolved "https://registry.npmjs.org/fslightbox/-/fslightbox-3.7.5.tgz"
-  integrity sha512-swEUrwMOyiBhdkPf3GXj4nxARX5d8/9yfVCdxgPLl9+ZMiacUTub9O2wxLI0Y2G2jI85Qxfqpv2I24vlbx0zfg==
 
 function-bind@^1.1.2:
   version "1.1.2"

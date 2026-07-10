@@ -121,7 +121,7 @@ const generateImages = async (cb) => {
     gulp
       .src(`src/${folder}/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}`)
       .pipe(newer({ dest: `public/${folder}`, ext: '.webp' }))
-      .pipe(imagemin([imageminWebp({ quality })]))
+      //.pipe(imagemin([imageminWebp({ quality })]))
       .pipe(rename({ extname: '.webp' }))
       .pipe(gulp.dest(`public/${folder}`));
   });

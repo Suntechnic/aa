@@ -429,7 +429,3 @@
 .header {
     padding-top: env(safe-area-inset-top);
 }
-
-.page {
-    padding-top: calc(var(--header) + env(safe-area-inset-top));
-}
