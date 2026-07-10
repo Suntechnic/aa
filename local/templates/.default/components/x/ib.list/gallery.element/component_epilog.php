@@ -32,4 +32,4 @@ if ($arResult['SECTION']['PATH']) {
 }
 
 // элемент в хлебные крошки
-$APPLICATION->AddChainItem($arResult['ITEM']['NAME']);
+//$APPLICATION->AddChainItem($arResult['ITEM']['NAME']);

@@ -94,5 +94,5 @@ if ($arResult['SECTION']['ID']) {
     
     $this->__component->setResultCacheKeys(['SECTION']);
 }
-\Kint::dump($arResult);
+
 
