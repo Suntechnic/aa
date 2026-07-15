@@ -45,7 +45,8 @@ $Page = $request->get('PAGEN_1') ?: 1;
             <?if($dctMaster['DETAIL_PICTURE']):?>
             <div class="block__img">
                 <picture>
-                    <img src="<?=\CFile::GetPath($dctMaster['DETAIL_PICTURE'])?>" alt="<?=$dctItem['NAME']?>">
+                    <img src="<?=\CFile::GetPath($dctMaster['DETAIL_PICTURE'])?>" alt="<?=$dctItem['NAME']?>" 
+                            style="width: auto;display: block;margin: auto;">
                 </picture>
             </div>
             <?endif?>

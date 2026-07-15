@@ -51,6 +51,27 @@ if($dctItem['PROPERTY_YEAR_VALUE']) $lstCharsTabContent[] = [
 
 
 $ExtraTabContent = $dctItem['PREVIEW_TEXT'] || $dctItem['FILES'] || $dctItem['IMAGES'];
+
+$bxApp = \Bitrix\Main\Application::getInstance();
+$router = $bxApp->getRouter();
+$olNavChain = [
+        [
+            'NAME' => 'Главная',
+            'URL' => '/',
+        ],
+        [
+            'NAME' => 'Каталог',
+            'URL' => $router->route('gallery'),
+        ]
+    ];
+if ($arResult['SECTION']['PATH']) {
+    foreach ($arResult['SECTION']['PATH'] as $arPath) {
+        $olNavChain[] = [
+                'NAME' => $arPath['NAME'],
+                'URL' => $arPath['SECTION_PAGE_URL']
+            ];
+    }
+}
 ?>
 
 <section class="product section animate-block">
@@ -59,12 +80,13 @@ $ExtraTabContent = $dctItem['PREVIEW_TEXT'] || $dctItem['FILES'] || $dctItem['IM
             <div class="product__top">
 
                 <div class="product__breadcrumb breadcrumb fade-up" data-watch data-watch-once>
-                    <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+                    <?include(DEFAULT_TEMPLATE_PATH.'/includes/breadcrumb.php');?>
+                    <?/*$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
                             "START_FROM" => "0", 
                             "PATH" => "", 
                             "SITE_ID" => "s1" 
                         )
-                    );?>
+                    );*/?>
                 </div>
 
 

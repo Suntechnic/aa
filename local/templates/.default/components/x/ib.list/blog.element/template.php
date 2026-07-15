@@ -14,8 +14,24 @@ $dctItem = $arResult['ITEM'];
 $bxApp = \Bitrix\Main\Application::getInstance();
 $router = $bxApp->getRouter();
 
+
 $APPLICATION->AddChainItem('Блог', $router->route('blog'));
 $APPLICATION->AddChainItem($dctItem['NAME']);
+
+$olNavChain = [
+        [
+            'NAME' => 'Главная',
+            'URL' => '/',
+        ],
+        [
+            'NAME' => 'Блог',
+            'URL' => $router->route('blog'),
+        ],
+        [
+            'NAME' => $dctItem['NAME'],
+            'URL' => ''
+        ]
+    ];
 ?>
 
 <section class="block section animate-block fade-up" data-watch data-watch-once>
@@ -23,12 +39,7 @@ $APPLICATION->AddChainItem($dctItem['NAME']);
         <div class="block__inner">
 
             <div class="block__breadcrumb breadcrumb">
-                <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
-                            "START_FROM" => "0", 
-                            "PATH" => "", 
-                            "SITE_ID" => "s1" 
-                        )
-                    );?>
+                <?include(DEFAULT_TEMPLATE_PATH.'/includes/breadcrumb.php');?>
             </div>
 
             <h2 class="block__title text-50"><?=$dctItem['NAME']?></h2>
@@ -51,7 +62,10 @@ $APPLICATION->AddChainItem($dctItem['NAME']);
             <?if($dctItem['DETAIL_PICTURE']):?>
             <div class="block__img">
                 <picture>
-                    <img src="<?=$dctItem['DETAIL_PICTURE']['SRC']?>" alt="<?=$dctItem['NAME']?>">
+                    <img 
+                            src="<?=$dctItem['DETAIL_PICTURE']['SRC']?>" 
+                            alt="<?=$dctItem['NAME']?>" 
+                        >
                 </picture>
             </div>
             <?endif;?>

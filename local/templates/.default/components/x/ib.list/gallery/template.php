@@ -34,7 +34,26 @@ if ($NextPageNomer) {
 }
     
 
-
+$bxApp = \Bitrix\Main\Application::getInstance();
+$router = $bxApp->getRouter();
+$olNavChain = [
+        [
+            'NAME' => 'Главная',
+            'URL' => '/',
+        ],
+        [
+            'NAME' => 'Каталог',
+            'URL' => $router->route('gallery'),
+        ]
+    ];
+if ($arResult['SECTION']['PATH']) {
+    foreach ($arResult['SECTION']['PATH'] as $arPath) {
+        $olNavChain[] = [
+                'NAME' => $arPath['NAME'],
+                'URL' => $arPath['SECTION_PAGE_URL']
+            ];
+    }
+}
 ?>
 <?if($arParams['TEMPALTE']['ONLY_LIST'] == 'Y'): 
     include('template.list.php');
@@ -49,12 +68,13 @@ else:?>
 
 
             <div class="product__breadcrumb breadcrumb fade-up" data-watch data-watch-once>
-                <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+                <?include(DEFAULT_TEMPLATE_PATH.'/includes/breadcrumb.php');?>
+                <?/*$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
                         "START_FROM" => "0", 
                         "PATH" => "", 
                         "SITE_ID" => "s1" 
                     )
-                );?>
+                );*/?>
             </div>
 
 
